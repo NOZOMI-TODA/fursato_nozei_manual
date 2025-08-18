@@ -20,7 +20,6 @@
       }
     })
   ).then(() => {
-    // Inject CSS once (header-footer.css + manual-theme.css)
     function ensureCss(href) {
       const exists = !!document.querySelector(`link[rel="stylesheet"][href^="${href}"]`);
       const inSheets = Array.from(document.styleSheets || []).some(s => s.href && s.href.indexOf(href) !== -1);
