@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>3.1 準備</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+  <div data-include="header.html"></div>
+  <main class="container">
+    <nav class="breadcrumb" aria-label="breadcrumb">
+      <a href="index.html">ホーム</a><span class="sep">›</span><a href="shipment_manual.html">出荷・納品</a><span class="sep">›</span><span>3.1 準備</span>
+    </nav>
+    <h1 class="page-title">3.1 準備</h1>
+    <p class="page-sub">このページの目的を簡潔に1行記載。</p>
+
+    <aside class="toc">
+      <h2>目次</h2>
+      <ol>
+        <li><a href="#step1">使用ツールにログイン</a></li>
+        <li><a href="#step2">組織を選択</a></li>
+        <li><a href="#step3">受注メニューで一括登録</a></li>
+      </ol>
+    </aside>
+
+    <section id="step1" class="step">
+      <h2>1. 使用ツールにログイン</h2>
+      <div class="body">
+        <p>ID・パスワードで管理画面へログインします。</p>
+        <figure class="figure">
+          <img src="img/3.1_1_login.png" alt="ログイン画面">
+          <figcaption>ログイン画面の例</figcaption>
+        </figure>
+        <p class="meta">※ パスワードの管理は社内規定に従うこと。</p>
+      </div>
+    </section>
+
+    <section id="step2" class="step">
+      <h2>2. 組織を選択</h2>
+      <div class="body">
+        <p>画面上部の組織セレクタから対象組織を選択します。</p>
+      </div>
+    </section>
+
+    <section id="step3" class="step">
+      <h2>3. 受注メニューで一括登録</h2>
+      <div class="body">
+        <p>左メニューの「受注」→ 右側の「一括登録」ボタンをクリックします。</p>
+        <table class="table">
+          <thead><tr><th>項目</th><th>入力例</th><th>備考</th></tr></thead>
+          <tbody>
+            <tr><td>CSVファイル</td><td>orders_YYYYMMDD.csv</td><td>テンプレート準拠</td></tr>
+            <tr><td>エラーログ</td><td>error_YYYYMMDD.log</td><td>取り込み後に確認</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <div class="note small">表記ルール：大項目（ページタイトル）は番号なし。操作手順の見出しのみ「1. 2. 3.」とする。</div>
+  </main>
+  <div data-include="footer.html"></div>
+  <script src="js/include.js" defer></script>
+</body>
+</html>

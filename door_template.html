@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>扉ページ（セクション名）</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+  <div data-include="header.html"></div>
+  <main class="container">
+    <nav class="breadcrumb" aria-label="breadcrumb">
+      <a href="index.html">ホーム</a><span class="sep">›</span><span>セクション名</span>
+    </nav>
+    <h1 class="page-title">セクション名</h1>
+    <p class="page-sub">このセクションの目的と範囲を1〜2行で説明。</p>
+
+    <div class="note small">表記ルール：扉ページは見出しに番号を付けない。下層ページは「3.1」のように付番する。</div>
+
+    <section class="child-list" aria-label="下層ページ一覧">
+      <div class="child-item">
+        <a href="3.1_preparation.html">3.1 準備</a>
+        <span class="badge">約5分</span>
+      </div>
+      <div class="child-item">
+        <a href="3.2_forms.html">3.2 帳票類出力</a>
+        <span class="badge">約10分</span>
+      </div>
+      <div class="child-item">
+        <a href="3.3_picking.html">3.3 ピッキング</a>
+        <span class="badge">約8分</span>
+      </div>
+    </section>
+  </main>
+  <div data-include="footer.html"></div>
+  <script src="js/include.js" defer></script>
+</body>
+</html>
