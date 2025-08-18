@@ -1,11 +1,17 @@
-<!-- header.html -->
+<!-- header.html (designed) -->
 <header class="site-header" role="banner" aria-label="ふるさと納税_業務マニュアル ヘッダー">
   <div class="container header-inner">
     <a class="logo" href="index.html" aria-label="トップへ">
       <span class="logo-text">ふるさと納税_業務マニュアル</span>
     </a>
 
-    <nav class="global-nav" aria-label="グローバルナビゲーション（共通）">
+    <button class="nav-toggle" aria-controls="global-nav" aria-expanded="false" aria-label="メニューを開閉">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+
+    <nav class="global-nav" id="global-nav" aria-label="グローバルナビゲーション（共通）">
       <ul id="global-nav-list">
         <li><a href="product_register.html">商品登録・在庫更新</a></li>
         <li><a href="order_manual.html">受注・出荷指示</a></li>
