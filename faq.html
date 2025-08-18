@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>よくある質問 | ふるさと納税_業務マニュアル</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+  <div data-include="header.html"></div>
+
+  <main class="container">
+    <h1>よくある質問（FAQ）</h1>
+    <p>このページでは、運用中によく寄せられる質問をまとめます。必要に応じて随時更新してください。</p>
+
+    <section>
+      <h2>1. ログイン情報の管理</h2>
+      <details>
+        <summary>Q. パスワードが変更された場合、どこを更新しますか？</summary>
+        <div>
+          <p>A. 当マニュアルの記載は伏せ字のままとし、実運用のパスワードは社内規定に従って管理してください。問い合わせは管理責任者へ。</p>
+        </div>
+      </details>
+    </section>
+
+    <section>
+      <h2>2. 画像が表示されない</h2>
+      <details>
+        <summary>Q. 本番公開で画像が出ない場合の対処は？</summary>
+        <div>
+          <ul>
+            <li><code>manual/img/</code> に対象画像があるか確認</li>
+            <li>ファイル名の大文字・小文字や拡張子が一致しているか確認</li>
+            <li>ブラウザのキャッシュをクリア（Ctrl+F5）</li>
+          </ul>
+        </div>
+      </details>
+    </section>
+
+    <section>
+      <h2>3. ヘッダー・フッターが表示されない</h2>
+      <details>
+        <summary>Q. 共通パーツが表示されないときは？</summary>
+        <div>
+          <ul>
+            <li><code>js/include.js</code> が存在し、ページ末尾に <code>&lt;script src="js/include.js" defer&gt;&lt;/script&gt;</code> があるか</li>
+            <li><code>&lt;div data-include="header.html"&gt;&lt;/div&gt;</code> と <code>&lt;div data-include="footer.html"&gt;&lt;/div&gt;</code> の記述があるか</li>
+          </ul>
+        </div>
+      </details>
+    </section>
+  </main>
+
+  <div data-include="footer.html"></div>
+  <script src="js/include.js" defer></script>
+</body>
+</html>
