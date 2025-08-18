@@ -1,9 +1,10 @@
-/* css/header-footer.css : Header & Footer theming (no conflict with existing CSS) */
+
+/* header-footer.css v2: stronger overrides for nav appearance */
 :root{
-  --brand-bg: #0b3d2e;       /* 深いグリーン */
+  --brand-bg: #0b3d2e;
   --brand-text: #ffffff;
-  --brand-accent: #e4c55b;   /* ゴールド */
-  --surface-0: #0f172a;      /* footer背景の濃紺 */
+  --brand-accent: #e4c55b;
+  --surface-0: #0f172a;
   --text-muted: #94a3b8;
   --container: 1200px;
 }
@@ -36,15 +37,30 @@
   margin: 0;
   padding: 0;
 }
-.global-nav a{
-  color: var(--brand-text);
-  text-decoration: none;
-  padding: 8px 4px;
-  border-bottom: 2px solid transparent;
+
+/* --- Strong reset for nav links (override button-like styles) --- */
+.site-header .global-nav a,
+.site-header .global-nav a:link,
+.site-header .global-nav a:visited{
+  display: inline-block;
+  color: var(--brand-text) !important;
+  background: transparent !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  text-decoration: none !important;
+  padding: 8px 4px !important;
+  margin: 0 !important;
+  outline: none !important;
+  border-bottom: 2px solid transparent !important;
   transition: border-color .2s ease;
 }
-.global-nav a:hover{ border-bottom-color: rgba(255,255,255,.6); }
-.global-nav a.is-active{ border-bottom-color: var(--brand-accent); }
+.site-header .global-nav a:hover{
+  border-bottom-color: rgba(255,255,255,.6) !important;
+}
+.site-header .global-nav a.is-active{
+  border-bottom-color: var(--brand-accent) !important;
+}
 
 /* Hamburger */
 .nav-toggle{
