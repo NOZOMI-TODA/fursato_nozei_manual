@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>3.2 帳票類出力 | ふるさと納税 業務マニュアル</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="has-sticky">
+  <div data-include="header.html"></div>
+
+
+
+<main>
+  <!-- TOC: ヘッダー直下に配置（仕様準拠） -->
+  <nav class="toc" aria-label="目次">
+    <h2>目次</h2>
+    <ul>
+      <li><a href="#overview">業務概要</a></li>
+      <li><a href="#login">ログイン情報・接続先</a></li>
+      <li><a href="#steps">操作手順</a>
+        <ul>
+          <li><a href="#step1">1. 使用ツールにログイン</a></li>
+          <li><a href="#step2">2. 組織を選択</a></li>
+          <li><a href="#step3">3. 出荷作業中を選択</a></li>
+          <li><a href="#step4">4. 出荷グループを選択</a></li>
+          <li><a href="#step5">5. トータルピッキングを印刷</a></li>
+          <li><a href="#step6">6. 出荷指示書を印刷</a></li>
+          <li><a href="#step7">7. 納品書を印刷</a></li>
+        </ul>
+      </li>
+      <li><a href="#notes">注意事項</a></li>
+      <li><a href="#raci">RACI定義表</a></li>
+      <li><a href="#footer">フッター</a></li>
+    </ul>
+  </nav>
+
+  <section id="overview">
+    <h2>業務概要</h2>
+    <p>帳票類出力は、受注データに基づき出荷作業に必要な帳票をシステムから生成する業務です。誤出力や帳票不足は出荷ミスに直結するため、必須工程として正確性が求められます。</p>
+  </section>
+
+  <section id="login">
+    <h2>ログイン情報・接続先（Login）</h2>
+    <p class="note">※ログイン情報は定期的に変更されるため、最新版はIT管理者に確認してください。外部公開時はマスキングまたは非表示。</p>
+
+    <h3>・LOGIRESS</h3>
+    <table>
+      <thead>
+        <tr><th>項目</th><th>内容</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">システム名</th><td>LOGIRESS</td></tr>
+        <tr><th scope="row">ログインURL</th><td><a href="https://app.logiless.com/" target="_blank" rel="noopener">https://app.logiless.com/</a></td></tr>
+        <tr><th scope="row">ユーザーID</th><td>mimurafoods@googlegroups.com</td></tr>
+        <tr><th scope="row">パスワード</th><td>Mimura20250712</td></tr>
+      </tbody>
+    </table>
+    <p class="note">※ログイン情報は社内利用に限り平文可。外部公開時はマスキングまたは非表示。</p>
+
+    <h3>・プリンタ</h3>
+    <table>
+      <thead>
+        <tr><th>項目</th><th>内容</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">システム名</th><td>プリンタ</td></tr>
+        <tr><th scope="row">接続方法</th><td>ネットワーク接続</td></tr>
+        <tr><th scope="row">アカウント</th><td>なし</td></tr>
+      </tbody>
+    </table>
+    <p class="note">※A4の用紙設定を確認</p>
+  </section>
+
+  <section id="steps">
+    <h2>操作手順</h2>
+
+    <article id="step1">
+      <h3><strong>1. 使用ツールにログイン</strong></h3>
+      <p>ID・パスワードを使用してLOGIRESSにアクセスし、管理画面へログインします。</p>
+      <img src="img/3.2_1_login.png" alt="1. 使用ツールにログイン（ログイン完了）">
+    </article>
+
+    <article id="step2">
+      <h3><strong>2. 組織を選択</strong></h3>
+      <p>ログイン後、画面上部の組織選択から「オペレーター」タブを選択し「株式会社ミムラフーズ（オペレーター）」を選択します。</p>
+      <img src="img/3.2_2_orgoption.png" alt="2. 組織を選択（オペレーター選択）">
+    </article>
+
+    <article id="step3">
+      <h3><strong>3. 出荷作業中を選択</strong></h3>
+      <p>左メインメニュー「出荷」を選択し、メイン画面の上部タブ「出荷作業中」を選びます。</p>
+      <img src="img/3.2_3_selectwork.png" alt="3. 出荷作業中を選択（タブ表示）">
+    </article>
+
+    <article id="step4">
+      <h3><strong>4. 出荷グループを選択</strong></h3>
+      <p>作業を行う出荷グループ（yyyy/mm/dd）を選びます。</p>
+      <img src="img/3.2_4_selectgroup.png" alt="4. 出荷グループを選択（日付別グループ）">
+    </article>
+
+    <article id="step5">
+      <h3><strong>5. トータルピッキングを印刷</strong></h3>
+      <p>出荷作業中一覧の上部タブ「トータルピッキング」をクリックします。PDF画面を印刷します。</p>
+      <img src="img/3.2_5_print1.png" alt="5. トータルピッキングを印刷（PDF出力）">
+    </article>
+
+    <article id="step6">
+      <h3><strong>6. 出荷指示書を印刷</strong></h3>
+      <p>出荷作業中一覧の上部タブ「出荷作業中」をクリックします。PDF画面を印刷します。</p>
+      <img src="img/3.2_6_print2.png" alt="6. 出荷指示書を印刷（PDF出力）">
+    </article>
+
+    <article id="step7">
+      <h3><strong>7. 納品書を印刷</strong></h3>
+      <p>出荷作業中一覧の上部タブ「納品書」をクリックします。PDF画面を印刷します。</p>
+      <img src="img/3.2_7_print3.png" alt="7. 納品書を印刷（PDF出力）">
+    </article>
+  </section>
+
+  <section id="notes">
+    <h2>注意事項</h2>
+    <ul>
+      <li>帳票は必ず最新データを反映して出力すること。</li>
+      <li>出荷確定前に必ず帳票を確認すること。</li>
+      <li>送り状は配送業者ごとに様式が異なるため誤選択に注意。</li>
+    </ul>
+  </section>
+
+  <section id="raci">
+    <h2>RACI定義表</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>作業項目</th>
+          <th>R（実行）</th>
+          <th>A（責任）</th>
+          <th>C（相談）</th>
+          <th>I（共有）</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">帳票類出力</th>
+          <td>出荷担当</td>
+          <td>商品管理責任者</td>
+          <td>受注・出荷指示担当</td>
+          <td>出荷担当</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+</main>
+
+
+  <div data-include="footer.html"></div>
+  <script src="js/include.js" defer></script>
+</body>
+</html>

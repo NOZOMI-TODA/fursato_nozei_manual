@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>3.4 納品完了 | ふるさと納税 業務マニュアル</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="has-sticky">
+  <div data-include="header.html"></div>
+
+
+
+<main>
+  <!-- TOC: ヘッダー直下に配置（仕様準拠） -->
+  <nav class="toc" aria-label="目次">
+    <h2>目次</h2>
+    <ul>
+      <li><a href="#overview">業務概要</a></li>
+      <li><a href="#login">ログイン情報・接続先</a></li>
+      <li><a href="#steps">操作手順</a>
+        <ul>
+          <li><a href="#step1">1. 使用ツールにログイン</a></li>
+          <li><a href="#step2">2. 組織を選択</a></li>
+          <li><a href="#step3">3. 出荷作業中を選択</a></li>
+          <li><a href="#step4">4. 出荷グループを選択</a></li>
+          <li><a href="#step5">5. 作業完了の出荷伝票をチェック</a></li>
+          <li><a href="#step6">6. 出荷作業完了を実行</a></li>
+          <li><a href="#step7">7. ステータス変更を確認</a></li>
+        </ul>
+      </li>
+      <li><a href="#notes">注意事項</a></li>
+      <li><a href="#raci">RACI定義表</a></li>
+      <li><a href="#footer">フッター</a></li>
+    </ul>
+  </nav>
+
+  <section id="overview">
+    <h2>業務概要</h2>
+    <p>納品完了処理は、出荷された商品について最終的にシステム上で納品完了ステータスを反映する業務である。これにより顧客への納品が正式に完了として登録され、売上・請求業務に連動する。処理を実行しないと納品・売上・請求業務に影響するため必ず実施しなくてはならない工程である。</p>
+  </section>
+
+  <section id="login">
+    <h2>ログイン情報・接続先</h2>
+    <p class="note">※ログイン情報は定期的に変更されるため、最新版はIT管理者に確認してください。外部公開時はマスキングまたは非表示。</p>
+    <h3>・LOGIRESS</h3>
+    <table>
+      <thead>
+        <tr><th>項目</th><th>内容</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">システム名</th><td>LOGIRESS</td></tr>
+        <tr><th scope="row">ログインURL</th><td><a href="https://app.logiless.com/" target="_blank" rel="noopener">https://app.logiless.com/</a></td></tr>
+        <tr><th scope="row">ユーザーID</th><td>mimurafoods@googlegroups.com</td></tr>
+        <tr><th scope="row">パスワード</th><td>Mimura20250712</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section id="steps">
+    <h2>操作手順</h2>
+
+    <article id="step1">
+      <h3><strong>1. 使用ツールにログイン</strong></h3>
+      <p>ID・パスワードを使用してLOGIRESSにアクセスし、管理画面へログインします。</p>
+      <img src="img/3.4_1_login.png" alt="1. 使用ツールにログイン（ログイン画面）">
+    </article>
+
+    <article id="step2">
+      <h3><strong>2. 組織を選択</strong></h3>
+      <p>ログイン後、画面上部の組織選択から「オペレーター」タブを選択し「株式会社ミムラフーズ（オペレーター）」を選択します。</p>
+      <img src="img/3.4_2_orgoption.png" alt="2. 組織を選択（オペレーター選択）">
+    </article>
+
+    <article id="step3">
+      <h3><strong>3. 出荷作業中を選択</strong></h3>
+      <p>左メインメニュー「出荷」を選択し、メイン画面の上部タブ「出荷作業中」を選びます。</p>
+      <img src="img/3.4_3_selectwork.png" alt="3. 出荷作業中を選択（タブ表示）">
+    </article>
+
+    <article id="step4">
+      <h3><strong>4. 出荷グループを選択</strong></h3>
+      <p>作業を行う出荷グループ（yyyy/mm/dd）を選びます。</p>
+      <img src="img/3.4_4_selectgroup.png" alt="4. 出荷グループを選択（日付別グループ）">
+    </article>
+
+    <article id="step5">
+      <h3><strong>5. 作業完了の出荷伝票をチェック</strong></h3>
+      <p>各出荷伝票の左側にあるチェックボックスにチェックを入れて、出荷を完了させたい出荷伝票を選択します。</p>
+      <img src="img/3.4_5_check.png" alt="5. 作業完了の出荷伝票をチェック（選択）">
+    </article>
+
+    <article id="step6">
+      <h3><strong>6. 出荷作業完了を実行</strong></h3>
+      <p>表の上部にある「出荷作業を完了」をクリックし、「確定」を押します。</p>
+      <img src="img/3.4_6_workcomplete.png" alt="6. 出荷作業完了を実行（確定）">
+    </article>
+
+    <article id="step7">
+      <h3><strong>7. ステータス変更を確認</strong></h3>
+      <p>出荷＞上部タブ「出荷済み」をクリックし、出荷一覧に該当作業の出荷が存在しているか確認します。</p>
+      <img src="img/3.4_7_workcomplete.png" alt="7. ステータス変更を確認（出荷済み一覧）">
+    </article>
+  </section>
+
+  <section id="notes">
+    <h2>注意事項</h2>
+    <ul>
+      <li>出荷グループは必ず正しいグループを選択すること。</li>
+      <li>ステータスが反映されない場合は再度更新を実行すること。</li>
+      <li>例外発生時はシステム管理者に報告し、再発防止策を記録すること。</li>
+    </ul>
+  </section>
+
+  <section id="raci">
+    <h2>RACI定義表</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>作業項目</th>
+          <th>R（実行）</th>
+          <th>A（責任）</th>
+          <th>C（相談）</th>
+          <th>I（共有）</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">納品完了処理</th>
+          <td>出荷担当</td>
+          <td>商品管理責任者</td>
+          <td>LOGILESSヘルプセンター</td>
+          <td>受注・出荷指示担当</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+</main>
+
+
+  <div data-include="footer.html"></div>
+  <script src="js/include.js" defer></script>
+</body>
+</html>

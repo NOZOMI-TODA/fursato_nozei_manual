@@ -1,0 +1,280 @@
+
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #fff;
+    color: #000;
+}
+header {
+    padding: 20px;
+}
+header nav {
+    display: flex;
+    gap: 12px;
+    margin-top: 10px;
+}
+header nav a {
+    padding: 10px 16px;
+    border: 1px solid #333;
+    border-radius: 4px;
+    background-color: #f0f0f0;
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+}
+header nav a:hover {
+    background-color: #ddd;
+}
+main {
+    padding: 40px;
+}
+h1, h2 {
+    color: #222;
+}
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 40px;
+}
+th, td {
+    border: 1px solid #aaa;
+    padding: 10px;
+    text-align: left;
+}
+th {
+    background-color: #e8e8e8;
+}
+footer {
+    padding: 20px 40px;
+    border-top: 1px solid #ccc;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9em;
+}
+footer a {
+    margin-right: 10px;
+    text-decoration: none;
+    color: #000;
+    border-bottom: 1px dotted #000;
+}
+footer a:hover {
+    text-decoration: underline;
+}
+
+
+/* Flow step visual styling */
+.flow-step-boxed .step {
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 1em;
+  margin-bottom: 1.5em;
+  background: #f9f9f9;
+}
+.step-phase {
+  font-size: 1em;
+  font-weight: bold;
+  color: #888;
+}
+.step-number {
+  font-size: 1.3em;
+  font-weight: bold;
+  color: #0078D7;
+}
+.step-title a {
+  font-size: 1.2em;
+  font-weight: normal;
+  color: #0078D7;
+  text-decoration: none;
+}
+.step-title a:hover {
+  text-decoration: underline;
+}
+
+/* Anchor color unification */
+a {
+  color: #0078D7;
+}
+
+
+/* テーブルオブコンテンツ（TOC）視認性向上 */
+.toc {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 1em;
+  margin: 1.5em 0;
+  background-color: #f2f2f2;
+}
+
+.toc h2 {
+  font-size: 1.5em;
+  margin-top: 0;
+  margin-bottom: 0.75em;
+  font-weight: bold;
+  color: #333;
+}
+
+.toc ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.toc li {
+  margin-bottom: 0.5em;
+}
+
+.toc li ul {
+  padding-left: 1.5em;
+  margin-top: 0.3em;
+}
+
+.toc a {
+  color: #0078D7;
+  text-decoration: none;
+  font-weight: normal;
+}
+
+.toc a:hover {
+  text-decoration: underline;
+}
+
+
+
+/* ========== 追加: 画像のレスポンシブ対応 ========== */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ========== 追加: テーブルの視認性（ゼブラ） ========== */
+table tbody tr:nth-child(even) td {
+  background-color: #fafafa;
+}
+
+/* ========== 追加: フォーカス可視化（アクセシビリティ） ========== */
+a:focus, button:focus, [tabindex]:focus {
+  outline: 2px solid #0078D7;
+  outline-offset: 2px;
+}
+
+/* ========== 追加: 必須ラベルの表現 ========== */
+.required::after {
+  content: " *";
+  color: #c00;
+  font-weight: bold;
+}
+
+/* ========== 追加: 注記・注意の見た目 ========== */
+.note {
+  background: #fff8e1;
+  border-left: 4px solid #f0c000;
+  padding: 10px 12px;
+  margin: 12px 0;
+}
+.alert {
+  background: #ffeaea;
+  border-left: 4px solid #d93025;
+  padding: 10px 12px;
+  margin: 12px 0;
+}
+
+/* ========== 追加: 印刷用スタイル ========== */
+@page {
+  size: A4;
+  margin: 15mm;
+}
+@media print {
+  header, footer, nav, .no-print {
+    display: none !important;
+  }
+  body {
+    color: #000;
+    font-size: 11pt;
+  }
+  h1, h2, h3 {
+    page-break-after: avoid;
+  }
+  table {
+    page-break-inside: avoid;
+  }
+  a[href]:after {
+    content: " (" attr(href) ")";
+    font-size: 9pt;
+  }
+}
+
+/* ========== 追加: 小さめ画面での余白調整 ========== */
+@media (max-width: 768px) {
+  main {
+    padding: 20px;
+  }
+}
+
+
+/* =========================================================
+   Web要求仕様対応パッチ (2025-08-17)
+   - ヘッダー崩れ防止 / グローバルナビ折返し対応
+   - TOCをヘッダー直下に置いた際の干渉防止
+   - 表・画像・リンクの統一スタイル
+   - stickyヘッダー運用時のベース設定（任意）
+   ========================================================= */
+
+/* 1) ベース */
+*,
+*::before,
+*::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; line-height: 1.6; font-family: system-ui, -apple-system, Segoe UI, Roboto, "Hiragino Kaku Gothic ProN", "Noto Sans JP", Meiryo, sans-serif; color: #222; }
+a { color: #0078D7; }
+a:focus { outline: 2px solid #0078D7; outline-offset: 2px; }
+img { max-width: 100%; height: auto; display: block; }
+
+/* 2) ヘッダー & グローバルナビ */
+header { background: #fff; border-bottom: 1px solid #ddd; padding: 12px 16px; }
+header h1 { margin: 0; font-size: 1.6rem; line-height: 1.3; }
+
+/* パターンA: <header><nav><a>... */
+header nav { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 10px; padding: 4px 0; }
+header nav a { text-decoration: none; }
+header nav a[aria-current="page"] { font-weight: 700; text-decoration: underline; }
+
+/* パターンB: <nav class="global-nav"><ul><li><a>... */
+.global-nav { margin-top: 6px; border-top: 1px solid #eee; border-bottom: 1px solid #eee; }
+.global-nav ul { list-style: none; display: flex; flex-wrap: wrap; gap: 12px; padding: 8px 0; margin: 0; }
+.global-nav a { text-decoration: none; }
+.global-nav a[aria-current="page"] { font-weight: 700; text-decoration: underline; }
+
+/* sticky運用（任意） */
+header.sticky { position: sticky; top: 0; z-index: 10; background: #fff; }
+body.has-sticky main { padding-top: 64px; } /* 必要に応じて .has-sticky をbodyへ付与 */
+
+/* 3) TOC（ヘッダー直下配置時の干渉防止） */
+.toc { clear: both; margin: 16px 16px 24px; padding: 8px 12px; border: 1px solid #eee; background: #fafafa; border-radius: 6px; }
+.toc h2 { margin: 0 0 8px; font-size: 1rem; }
+.toc ul { list-style: none; padding-left: 0; margin: 0; }
+.toc li { margin: 4px 0; }
+.toc a { text-decoration: none; }
+
+/* 4) セクション / テーブル */
+main { padding: 0 16px 32px; }
+section { margin: 24px 0; }
+table { border-collapse: collapse; width: 100%; }
+th, td { border: 1px solid #e2e2e2; padding: 8px 10px; text-align: left; }
+thead th { background: #f7f7f7; }
+
+/* 5) フッター */
+footer { border-top: 1px solid #eee; padding: 16px; text-align: center; color: #555; }
+
+/* 6) レスポンシブ */
+@media (max-width: 768px) {
+  header nav { gap: 8px; }
+  main { padding: 0 12px 24px; }
+  th, td { padding: 8px; }
+}
+
+/* 7) 印刷（任意） */
+@media print {
+  header, .toc, footer { page-break-after: avoid; }
+  a { color: #000; text-decoration: none; }
+}

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>1.3 商品の入荷予定の作成 | ミムラフーズ 業務マニュアル</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div data-include="header.html"></div>
+
+  
+
+  <main>
+    <section id="overview">
+      <h2>業務概要</h2>
+      <p>
+        この業務は、ふるさと納税の返礼品として取り扱う商品の入荷予定を作成・登録するプロセスを扱います。
+        仕入先からの納品スケジュールをもとに、在庫管理システム（LOGILESS等）に入荷予定を正確に入力することで、
+        在庫計画・受注処理の正確性を確保します。誤った予定登録は在庫不足や納期遅延を招くため、重要な業務です。
+      </p>
+    </section>
+
+    <section id="login">
+      <h2>ログイン情報・接続先</h2>
+      <table>
+        <thead>
+          <tr><th>項目</th><th>内容</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>システム名</td><td>LOGILESS（在庫管理システム）</td></tr>
+          <tr><td>ログインURL</td><td><a href="https://app.logiless.com/" target="_blank" rel="noopener">https://app.logiless.com/</a></td></tr>
+          <tr><td>ユーザーID</td><td>mimurafoods@googlegroups.com</td></tr>
+          <tr><td>パスワード</td><td>Mimura20250712</td></tr>
+        </tbody>
+      </table>
+      <p>※ログイン情報は定期的に変更されるため、最新版はIT管理者に確認してください。<br>
+      ※外部公開時はマスキングまたは非表示にすること。</p>
+    </section>
+
+    <aside class="toc" id="toc">
+      <h2>テーブルオブコンテンツ（TOC）</h2>
+      <ul>
+        <li><a href="#overview">業務概要</a></li>
+        <li><a href="#login">ログイン情報・接続先</a></li>
+        <li>
+          <a href="#procedure">操作手順</a>
+          <ul>
+            <li><a href="#step1">1. 使用ツールにログインする</a></li>
+            <li><a href="#step2">2. 組織を選択する</a></li>
+            <li><a href="#step3">3. 入荷予定一覧を開く</a></li>
+            <li><a href="#step4">4. 新規登録をクリック</a></li>
+            <li><a href="#step5">5. 入力項目を記入する</a></li>
+            <li><a href="#step6">6. 登録</a></li>
+          </ul>
+        </li>
+        <li><a href="#notes">注意事項</a></li>
+        <li><a href="#raci">RACI定義表</a></li>
+        <li><a href="#footer">フッター</a></li>
+      </ul>
+    </aside>
+
+    <section id="procedure">
+      <h2>操作手順</h2>
+
+      <article id="step1">
+        <h3>1. 使用ツールにログインする</h3>
+        <p>説明文：LOGILESSにログインする。</p>
+        <img src="img/1.3_1_login.png" alt="1. 使用ツールにログインする">
+      </article>
+
+      <article id="step2">
+        <h3>2. 組織を選択する</h3>
+        <p>説明文：「株式会社ミムラフーズ（マーチャント）」をクリック。</p>
+        <img src="img/1.3_2_orgoption.png" alt="2. 組織を選択する">
+      </article>
+
+      <article id="step3">
+        <h3>3. 入荷予定一覧を開く</h3>
+        <p>説明文：左サイドメニューの「入荷予定」をクリック。</p>
+        <img src="img/1.3_3_nyuka_yotei.png" alt="3. 入荷予定一覧を開く">
+      </article>
+
+      <article id="step4">
+        <h3>4. 新規登録をクリック</h3>
+        <p>説明文：下層メニューの「入荷予定」の画面上部右の「＋新規登録」をクリック。</p>
+        <img src="img/1.3_4_new_entry.png" alt="4. 新規登録をクリック">
+      </article>
+
+      <article id="step5">
+        <h3>5. 入力項目を記入する</h3>
+        <p>説明文：仕入先名、納品先（納品先倉庫と納品先名）、商品コード、商品名、単価、数量を入力する。複数のSKUを追加する場合は、「+明細行を追加」をクリック。</p>
+
+        <table>
+          <thead>
+            <tr>
+              <th>項目区分</th><th>入力項目</th><th>必須</th><th>備考</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>伝票情報</td><td>入荷予定コード</td><td></td><td></td></tr>
+            <tr><td>伝票情報</td><td>入荷予定カテゴリ</td><td></td><td></td></tr>
+            <tr><td>仕入先</td><td>仕入先コード</td><td></td><td></td></tr>
+            <tr><td>仕入先</td><td>仕入先名</td><td>★</td><td>株式会社ミムラフーズ（マーチャント）</td></tr>
+            <tr><td>仕入先</td><td>郵便番号</td><td></td><td>郵便番号入力で住所補完</td></tr>
+            <tr><td>仕入先</td><td>都道府県</td><td></td><td></td></tr>
+            <tr><td>仕入先</td><td>市区町村</td><td></td><td></td></tr>
+            <tr><td>仕入先</td><td>住所</td><td></td><td></td></tr>
+            <tr><td>仕入先</td><td>電話番号</td><td></td><td></td></tr>
+            <tr><td>仕入先</td><td>FAX番号</td><td></td><td></td></tr>
+            <tr><td>仕入先</td><td>メールアドレス</td><td></td><td></td></tr>
+            <tr><td>納品先</td><td>納品先倉庫</td><td>★</td><td>プルダウンで選択</td></tr>
+            <tr><td>納品先</td><td>納品先名</td><td>★</td><td>株式会社ミムラフーズ（オペレーター）</td></tr>
+            <tr><td>納品先</td><td>郵便番号</td><td></td><td>郵便番号入力で住所補完</td></tr>
+            <tr><td>納品先</td><td>都道府県</td><td></td><td></td></tr>
+            <tr><td>納品先</td><td>市区町村</td><td></td><td></td></tr>
+            <tr><td>納品先</td><td>住所</td><td></td><td></td></tr>
+            <tr><td>納品先</td><td>電話番号</td><td></td><td></td></tr>
+            <tr><td>納品先</td><td>FAX番号</td><td></td><td></td></tr>
+            <tr><td>明細行</td><td>商品コード</td><td>★</td><td>入力フィールド右横の「虫眼鏡アイコン」をクリック、ポップアップ画面が出るので、画面を下にスクロールして、該当するSKUの「選択ボタン」をクリック</td></tr>
+            <tr><td>明細行</td><td>商品名</td><td>★</td><td>自動表示</td></tr>
+            <tr><td>明細行</td><td>単価（税込）</td><td>★</td><td>SKUシートから対象SKUの単価（税込）を確認して入力する</td></tr>
+            <tr><td>明細行</td><td>数量</td><td>★</td><td>追加するSKU数を入力</td></tr>
+            <tr><td>入荷予定表</td><td>入荷予定日</td><td></td><td></td></tr>
+            <tr><td>入荷予定表</td><td>配送会社</td><td></td><td></td></tr>
+            <tr><td>入荷予定表</td><td>送り状番号</td><td></td><td></td></tr>
+          </tbody>
+        </table>
+        <img src="img/1.3_5_input_fields.png" alt="5. 入力項目を記入する">
+      </article>
+
+      <article id="step6">
+        <h3>6. 登録</h3>
+        <p>説明文：入力内容を確認して登録ボタンをクリック。</p>
+        <img src="img/1.3_6_submit.png" alt="6. 登録">
+      </article>
+    </section>
+
+    <section id="notes">
+      <h2>注意事項</h2>
+      <ul>
+        <li>入力ミスがあると在庫や納期に影響するため、必ず保存前に見直しを行うこと</li>
+        <li>納品先・仕入先情報は最新のマスタを使用すること</li>
+        <li>SKU単価は必ずSKUシートで最新情報を確認すること</li>
+      </ul>
+    </section>
+
+    <section id="raci">
+      <h2>RACI定義表</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>作業項目</th><th>R（実行）</th><th>A（責任）</th><th>C（相談）</th><th>I（共有）</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>入荷予定の登録</td><td>商品管理担当</td><td>商品管理責任者</td><td>仕入先担当</td><td>入庫・出荷担当</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  
+  <div data-include="footer.html"></div>
+  <script src="js/include.js" defer></script>
+</body>
+</html>

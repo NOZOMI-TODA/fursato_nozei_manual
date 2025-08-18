@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>第3章 出荷・納品マニュアル</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div data-include="header.html"></div>
+
+  
+
+  <!-- TOC（統一配置ルール：ヘッダー直下） -->
+  <nav class="toc" aria-label="目次">
+    <h2>目次</h2>
+    <ul>
+      <li><a href="#overview">業務概要</a></li>
+      <li><a href="#tools">使用ツール一覧</a></li>
+      <li><a href="#environment">動作推奨環境</a></li>
+      <li><a href="#flow">業務フローとマニュアルリンク集</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <section id="overview">
+      <h2>業務概要</h2>
+      <p><strong>目的：</strong>出荷待ちの出荷準備から配送・納品完了報告までの一連の実務を標準化し、作業時間短縮と誤出荷ゼロを目指す。</p>
+      <p><strong>範囲：</strong>出荷作業準備／帳票類出力（ピッキングリスト・出荷指示書・納品書）／ピッキング・出荷検品・出荷確定／納品完了登録（出荷済みステータス）。</p>
+      <p><strong>対象読者：</strong>受注・出荷指示担当、出荷担当（倉庫／現場）、商品管理責任者、管理部門（モニタリング）。</p>
+    </section>
+
+    <section id="tools">
+      <h2>使用ツール一覧</h2>
+      <table>
+        <thead>
+          <tr>
+            <th style="width:6em;">No</th>
+            <th>内容</th>
+            <th>主担当（R）</th>
+            <th>使用ツール</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>出荷作業準備</td>
+            <td>出荷担当</td>
+            <td><a href="https://www.logiless.com/" target="_blank" rel="noopener noreferrer">LOGILESS</a></td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>帳票類出力（ピッキングリスト・出荷指示書・納品書）</td>
+            <td>出荷担当</td>
+            <td><a href="https://www.logiless.com/" target="_blank" rel="noopener noreferrer">LOGILESS</a></td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>ピッキング・出荷検品・出荷確定</td>
+            <td>出荷担当</td>
+            <td>目視</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>納品完了登録</td>
+            <td>出荷担当</td>
+            <td><a href="https://www.logiless.com/" target="_blank" rel="noopener noreferrer">LOGILESS</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="environment">
+      <h2>動作推奨環境</h2>
+      <ul>
+        <li>OS：Windows 10/11 または macOS 最新</li>
+        <li>ブラウザ：Chrome／Edge／Safari の最新版</li>
+        <li>解像度：1920×1080 以上を推奨</li>
+        <li>通信速度：下り <strong>10Mbps以上</strong></li>
+        <li>メール環境：Outlook またはWebメール（通知受領・テンプレ送信が可能なこと）</li>
+      </ul>
+    </section>
+
+    <section id="flow" class="flow-step-boxed">
+      <h2>業務フローとマニュアルリンク集</h2>
+
+      <div class="step">
+        <div class="step-number">1</div>
+        <div class="step-title"><a href="3.1_preparation.html">出荷作業準備</a></div>
+      </div>
+
+      <div class="step">
+        <div class="step-number">2</div>
+        <div class="step-title"><a href="3.2_forms.html">帳票類出力（ピッキングリスト・出荷指示書・納品書）</a></div>
+      </div>
+
+      <div class="step">
+        <div class="step-number">3</div>
+        <div class="step-title"><a href="3.3_picking.html">ピッキング・出荷検品・出荷確定</a></div>
+      </div>
+
+      <div class="step">
+        <div class="step-number">4</div>
+        <div class="step-title"><a href="3.4_delivery_complete.html">納品完了登録</a></div>
+      </div>
+    </section>
+  </main>
+
+  
+  <div data-include="footer.html"></div>
+  <script src="js/include.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>1.4 入庫・在庫更新</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div data-include="header.html"></div>
+
+
+<main>
+  <section>
+    <h2>業務概要</h2>
+    <p>本業務は、ふるさと納税用商品の入庫処理および在庫数量の更新を行う工程です。商品の入庫情報を正確に登録し、在庫管理システム（LOGILESS）上で数量・保管場所を更新することで、受注から出荷までの業務を円滑に進めることを目的とします。</p>
+  </section>
+
+  <section>
+    <h2>ログイン情報・接続先</h2>
+    <table>
+      <thead>
+        <tr><th>項目</th><th>内容</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>システム名</td><td>LOGILESS（在庫管理システム）</td></tr>
+        <tr><td>ログインURL</td><td><a href="https://app.logiless.com/" target="_blank" rel="noopener">https://app.logiless.com/</a></td></tr>
+        <tr><td>ユーザーID</td><td>mimurafoods@googlegroups.com</td></tr>
+        <tr><td>パスワード</td><td>Mimura20250712</td></tr>
+      </tbody>
+    </table>
+    <p>※ログイン情報は社内利用に限り平文可。外部公開時はマスキングまたは非表示。</p>
+  </section>
+
+  <section class="toc">
+    <h2>テーブルオブコンテンツ（TOC）</h2>
+    <ul>
+      <li>業務概要</li>
+      <li>ログイン情報・接続先</li>
+      <li>操作手順
+        <ul>
+          <li>1. 使用ツールにログイン</li>
+          <li>2. 組織を選択</li>
+          <li>3. 入荷待ちを開く</li>
+          <li>4. 入荷予定をクリック</li>
+          <li>5. 入荷予定伝票をチェック</li>
+          <li>6. 検品数量を入力</li>
+          <li>7. 入荷を実行</li>
+          <li>8. 実行確認</li>
+        </ul>
+      </li>
+      <li>注意事項</li>
+      <li>RACI定義表</li>
+      <li>フッター</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>操作手順</h2>
+
+    <h3>1. 使用ツールにログイン</h3>
+    <p>説明文：ID・パスワードを使用してLOGILESSにアクセスし、管理画面へログインします。</p>
+    
+    <img src="img/1.4_1_login.png" alt="1. 使用ツールにログイン">
+
+    <h3>2. 組織を選択</h3>
+    <p>説明文：ログイン後、画面上部の組織選択から「オペレーター」タブを選択し「株式会社ミムラフーズ（オペレーター）」を選択します。</p>
+    
+    <img src="img/1.4_2_orgoption.png" alt="2. 組織を選択">
+
+    <h3>3. 入荷待ちを開く</h3>
+    <p>説明文：ダッシュボードを選択したのちの画面中央部「入荷待ち」右横の数字をクリックします。</p>
+    
+    <img src="img/1.4_3_sckedule.png" alt="3. 入荷待ちを開く">
+
+    <h3>4. 入荷予定をクリック</h3>
+    <p>説明文：上部タブの「入荷予定」をクリックして、入荷予定伝票を開きます。</p>
+    
+    <img src="img/1.4_4_sckedule2.png" alt="4. 入荷予定をクリック">
+
+    <h3>5. 入荷予定伝票をチェック</h3>
+    <p>説明文：入荷予定伝票の一覧から該当する「入荷予定伝票」をチェックして、「入荷予定コード（数字）」をクリックします。</p>
+    
+    <img src="img/1.4_5_sckedule_items.png" alt="5. 入荷予定伝票をチェック">
+
+    <h3>6. 検品数量を入力</h3>
+    <p>説明文：入荷予定伝票SKUのロケーション※を入力して、「検品した数量」を入力します。<br>※ロケーションには「1」を入れてください。</p>
+    
+    <img src="img/1.4_6_arrival.png" alt="6. 検品数量を入力">
+
+    <h3>7. 入荷を実行</h3>
+    <p>説明文：内容を確認し、「入荷を実行」ボタンをクリックして入荷を確定します。</p>
+    
+    <img src="img/1.4_7_submit.png" alt="7. 入荷を実行">
+
+    <h3>8. 実行確認</h3>
+    <p>説明文：在庫処理ステータスがエラーなく完了しているかを確認して、入庫・在庫更新は完了となります。</p>
+    
+    <img src="img/1.4_8_completel.png" alt="8. 実行確認">
+  </section>
+
+  <section>
+    <h2>注意事項</h2>
+    <ul>
+      <li>入庫時は必ずSKUと数量の一致を確認すること。</li>
+      <li>検品数量と入荷予定数量に乖離がある場合は、原因（数量差・破損・誤納など）を記録し、関係者へ共有すること。</li>
+      <li>ロケーションは端数・混載がないように運用ルールに従って入力すること（通常は「1」）。</li>
+      <li>在庫更新後は出荷チームに共有すること。</li>
+      <li>誤登録が発覚した場合は速やかに訂正し、関係者に連絡すること。</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>RACI定義表</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>R（実行）</th>
+          <th>A（責任）</th>
+          <th>C（相談）</th>
+          <th>I（共有）</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>入荷・在庫更新担当</td>
+          <td>出荷責任者</td>
+          <td>商品管理担当</td>
+          <td>加古川市ふるさと納税サポート室</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+</main>
+
+
+  <div data-include="footer.html"></div>
+  <script src="js/include.js" defer></script>
+</body>
+</html>

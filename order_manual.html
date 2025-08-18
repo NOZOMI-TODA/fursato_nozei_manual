@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>第2章 受発注マニュアル</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div data-include="header.html"></div>
+
+  
+
+  <main>
+    <h1>第2章 受発注マニュアル</h1>
+
+    <section id="overview">
+      <h2>業務概要</h2>
+      <p>目的：ふるさと納税における受注～発注～出荷指示に至るまでの一連の業務フローを体系化し、担当者が効率的・正確に業務を遂行できるようにする。</p>
+      <p>範囲：メール受信／受注データの取得／受注データの受注処理システムへの取込み／出荷指示の作成。</p>
+      <p>想定読者：非IT人材を含む実務担当者、社内教育・引継ぎの利用者。</p>
+      <div class="note">メモ：在庫引当のタイミングと例外（欠品・代替）に関する注記は下層ページ側で詳細化する。</div>
+    </section>
+
+    <section id="tools">
+      <h2>使用ツール一覧</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>No</th>
+            <th>内容</th>
+            <th>主担当（R）</th>
+            <th>使用ツール</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>受注情報通知</td>
+            <td>受注・出荷指示担当</td>
+            <td>メール</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>受注データ確認・取得</td>
+            <td>受注・出荷指示担当</td>
+            <td><a href="https://www.ledghome.jp/" target="_blank" rel="noopener">LedgHOME</a></td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>受発注処理</td>
+            <td>受注・出荷指示担当</td>
+            <td><a href="https://www.logiless.com/" target="_blank" rel="noopener">LOGILESS</a></td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="note">追記予定：実運用の役割名（例：受注管理担当＝ECオペ）、必要に応じてA/C/Iを補足。</p>
+    </section>
+
+    <section id="env">
+      <h2>動作推奨環境</h2>
+      <ul>
+        <li>OS：Windows 10/11 または macOS 最新版</li>
+        <li>ブラウザ：Google Chrome 最新版（推奨）、Microsoft Edge 最新版</li>
+        <li>解像度：1920×1080 以上</li>
+        <li>通信速度：下り10Mbps以上（有線または安定したWi‑Fi）</li>
+        <li>メール環境：SMTP/IMAP対応クライアント（Outlook推奨）</li>
+      </ul>
+    </section>
+
+    <section id="flow">
+      <h2>業務フローとマニュアルリンク集</h2>
+      <div class="flow-step-boxed">
+        <div class="step">
+          <div class="step-phase">ステップ1</div>
+          <div class="step-number">2.1</div>
+          <div class="step-title">メール受信</div>
+        </div>
+        <div class="step">
+          <div class="step-phase">ステップ2</div>
+          <div class="step-number">2.2</div>
+          <div class="step-title"><a href="2.2_order_check.html">受注データの取得</a></div>
+        </div>
+        <div class="step">
+          <div class="step-phase">ステップ3</div>
+          <div class="step-number">2.3</div>
+          <div class="step-title"><a href="2.3_inventory_check.html">受注データの受注処理システムへの取込み</a></div>
+        </div>
+        <div class="step">
+          <div class="step-phase">ステップ4</div>
+          <div class="step-number">2.4</div>
+          <div class="step-title"><a href="2.4_order_confirm.html">出荷指示の作成</a></div>
+        </div>
+      </div>
+    </section>
+
+    
+  </main>
+  <div data-include="footer.html"></div>
+  <script src="js/include.js" defer></script>
+</body>
+</html>

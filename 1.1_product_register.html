@@ -1,0 +1,96 @@
+
+<!DOCTYPE html>
+
+<html lang="ja">
+<head>
+<meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>1.1 商品マスタ登録・更新</title>
+<link href="css/style.css" rel="stylesheet"/>
+</head>
+<body>
+  <div data-include="header.html"></div>
+
+
+<nav class="toc">
+<h2>目次</h2>
+<ul>
+<li><a href="#overview">業務概要</a></li>
+<li><a href="#login">ログイン情報</a></li>
+<li><a href="#steps">操作手順（LOGILESS）</a><ul><li><a href="#step1">1. 使用ツールにログイン</a></li><li><a href="#step2">2. 組織を選択</a></li><li><a href="#step3">3. マスタをクリック</a></li><li><a href="#step4">4. 新規登録をクリック</a></li><li><a href="#step5">5. 必要情報を入力</a></li><li><a href="#step6">6. 登録</a></li></ul></li>
+<li><a href="#notes">登録時の注意点</a></li>
+<li><a href="#raci">RACI定義</a></li>
+</ul>
+</nav>
+<main>
+<section id="overview">
+<h2>業務概要</h2>
+<p>商品マスタ登録は、LOGILESSにおいて商品の基本情報を一元管理する出発点です。受注・在庫・出荷すべての処理に反映されるため、入力ミスや重複登録がないよう慎重な対応が求められます。</p>
+</section>
+<section id="login">
+<h2>ログイン情報（マーチャント用）</h2>
+<p>※ログイン情報は定期的に変更されるため、最新版はIT管理者に確認してください。</p>
+<table><thead><tr><th>項目</th><th>内容</th></tr></thead><tbody><tr><td>ログインID</td><td>mimurafoods@googlegroups.com</td></tr><tr><td>パスワード</td><td>Mimura20250712</td></tr><tr><td>ログインURL</td><td><a href="https://app2.logiless.com/merchant/sign_in" target="_blank">https://app2.logiless.com/merchant/sign_in</a></td></tr></tbody></table></section>
+<section id="steps">
+<h2>操作手順（LOGILESS）</h2>
+<ol>
+<li id="step1"><strong>使用ツールにログイン</strong><br/>LOGILESSにログイン<br/><img alt="ログイン画面" src="img/1.1_1_login.png"/></li>
+<li id="step2"><strong>組織を選択</strong><br/>組織を選択：「株式会社ミムラフーヅ（マーチャント）」をクリック<br/><img alt="組織選択" src="img/1.1_2_orgoption.png"/></li>
+<li id="step3"><strong>マスタをクリック</strong><br/>左サイドメニューの下部にある「マスタ」をクリック<br/><img alt="マスタメニュー" src="img/1.1_3_master.png"/></li>
+<li id="step4"><strong>新規登録をクリック</strong><br/>下層メニューの最上部「商品マスタ」を確認し「＋新規登録」をクリック<br/><img alt="商品マスタメニュー" src="img/1.1_4_productmaster.png"/></li>
+<li id="step5"><strong>必要情報を入力</strong><br/>以下の表の情報を入力する<br/><table>
+<tr><th>入力項目</th><th>必須</th><th>備考</th></tr>
+<tr><td>商品名</td><td>★</td><td>商品の名称（顧客表示あり）</td></tr>
+<tr><td>商品名（かな）</td><td></td><td>ひらがなでの読み仮名</td></tr>
+<tr><td>商品コード</td><td>★</td><td>社内一意の管理コード</td></tr>
+<tr><td>通常コード</td><td></td><td>JANコード等</td></tr>
+<tr><td>型番</td><td></td><td>メーカー型番など</td></tr>
+<tr><td>販売価格</td><td>★</td><td>実際に販売する単価（税込）</td></tr>
+<tr><td>標準価格</td><td></td><td>参考用価格（上代）</td></tr>
+<tr><td>仕入価格</td><td></td><td>原価（円）</td></tr>
+<tr><td>原価（参考）</td><td></td><td>参考用コストなど</td></tr>
+<tr><td>カラー／カラーコード</td><td></td><td>バリエーション情報</td></tr>
+<tr><td>サイズ／サイズコード</td><td></td><td>バリエーション情報</td></tr>
+<tr><td>幅（mm）／高さ／奥行</td><td></td><td>寸法（任意）</td></tr>
+<tr><td>重量（g）</td><td></td><td>実重量</td></tr>
+<tr><td>フリー項目1〜20</td><td></td><td>任意の補足情報欄</td></tr>
+<tr><td>デフォルト配送方法</td><td></td><td>初期設定される出荷手段</td></tr>
+<tr><td>サイズ区分</td><td></td><td>荷姿別の分類</td></tr>
+<tr><td>内容量</td><td></td><td>表示用数量</td></tr>
+<tr><td>配送カテゴリ</td><td></td><td>出荷温度帯に関わる分類</td></tr>
+<tr><td>仕入先／仕入先型番</td><td></td><td>取引先とその型番</td></tr>
+<tr><td>非表示フラグ</td><td></td><td>商品非表示の設定</td></tr>
+<tr><td>タグ</td><td></td><td>分類・検索用タグ</td></tr>
+<tr><td>ラベルテキスト</td><td></td><td>出荷ラベル向け文字列</td></tr>
+<tr><td>公開日（予約）</td><td></td><td>表示・販売の予定日</td></tr>
+<tr><td>コメント</td><td></td><td>補足・注意事項など</td></tr>
+<tr><td>サムネイル画像</td><td></td><td>JPG/PNG等の添付</td></tr>
+</table><img alt="入力画面" src="img/1.1_5_newproduct.png"/></li>
+<li id="step6"><strong>登録</strong><br/>入力内容を確認して登録ボタンをクリック<br/><img alt="登録ボタン" src="img/1.1_6_rejister.png"/></li>
+</ol>
+</section>
+<section id="notes">
+<h2>登録時の注意点</h2>
+<ul>
+<li>商品コードの重複は登録不可。発注先・物流ラベルと照合済のコードを必ず使用すること</li>
+<li>表示名に絵文字・全角記号などを含めない</li>
+<li>SKUは実際の物流／販売単位に合わせて正しく設定すること</li>
+<li>温度帯設定が誤っていると出荷指示が分離されるため要注意</li>
+</ul>
+</section>
+<section id="raci">
+<h2>RACI定義（商品マスタ登録）</h2>
+<table>
+<tr><th>作業項目</th><th>R（実行）</th><th>A（責任）</th><th>C（相談）</th><th>I（共有）</th></tr>
+<tr><td>商品コード・商品名の登録</td><td>マーチャント（商品管理）</td><td>商品管理責任者</td><td>EC運営・出荷担当</td><td>在庫更新担当者</td></tr>
+<tr><td>SKUコード・温度帯・分類設定</td><td>マーチャント（商品管理）</td><td>商品管理責任者</td><td>出荷担当</td><td>在庫更新担当者</td></tr>
+<tr><td>単位・サイズ入力</td><td>マーチャント（商品管理）</td><td>商品管理責任者</td><td>出荷担当</td><td>EC運営担当</td></tr>
+</table>
+</section>
+</main>
+
+  <div data-include="footer.html"></div>
+  <script src="js/include.js" defer></script>
+</body>
+</html>

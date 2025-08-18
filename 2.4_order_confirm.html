@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2.4 出荷指示の作成（下層ページ）</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div data-include="header.html"></div>
+
+  
+
+  <!-- TOC must be placed immediately below the header -->
+  <main>
+    <div class="toc">
+      <h2>目次</h2>
+      <ul>
+        <li><a href="#overview">業務概要</a></li>
+        <li><a href="#login">ログイン情報・接続先</a></li>
+        <li>
+          <a href="#steps">操作手順</a>
+          <ul>
+            <li><a href="#step1">1. LOGILESSにログイン</a></li>
+            <li><a href="#step2">2. 組織を選択</a></li>
+            <li><a href="#step3">3. 出荷待ちステータスを確認</a></li>
+          </ul>
+        </li>
+        <li><a href="#notes">注意事項</a></li>
+        <li><a href="#raci">RACI定義表</a></li>
+        <li><a href="#footer">フッター</a></li>
+      </ul>
+    </div>
+
+    <section id="overview">
+      <h2>業務概要</h2>
+      <p>
+        受注処理をもとに、LOGILESS 上で出荷指示を確定する業務。
+        出荷担当・配送業者への連携の起点となる重要プロセス。
+        出荷指示は自動的に作成されます。主にここでは、出荷指示が作成されているかの確認業務となります。
+      </p>
+    </section>
+
+    <section id="login">
+      <h2>ログイン情報・接続先</h2>
+      <p>※ログイン情報は定期的に変更されるため、最新版はIT管理者に確認してください。</p>
+      <table>
+        <thead>
+          <tr><th>項目</th><th>内容</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>システム名</td><td>LOGILESS（在庫管理システム）</td></tr>
+          <tr><td>ログインURL</td><td>https://app.logiless.com/</td></tr>
+          <tr><td>ユーザーID</td><td>mimurafoods@googlegroups.com</td></tr>
+          <tr><td>パスワード</td><td>Mimura20250712</td></tr>
+        </tbody>
+      </table>
+      <p>※ログイン情報は社内利用に限り平文可。外部公開時はマスキングまたは非表示。</p>
+    </section>
+
+    <section id="steps">
+      <h2>操作手順</h2>
+
+      <div class="step" id="step1">
+        <strong>1. LOGILESSにログイン</strong>
+        <p>ブラウザでログイン画面にアクセスし、ユーザーID・パスワードを入力してログインする。</p>
+        <img src="img/2.4_1_login.png" alt="1. LOGILESSにログイン（管理画面表示）">
+      </div>
+
+      <div class="step" id="step2">
+        <strong>2. 組織を選択</strong>
+        <p>上部タブの「株式会社ミムラフーヅ（マーチャント）」をクリックする。</p>
+        <img src="img/2.4_2_orgoption.png" alt="2. 組織を選択（マーチャント表示）">
+      </div>
+
+      <div class="step" id="step3">
+        <strong>3. 出荷待ちステータスを確認</strong>
+        <p>左メインメニュー「ダッシュボード」を選び、出荷から「ステータス：出荷待ち」を確認する。件数が作業した受注処理件数と一致していることを確認する。</p>
+        <img src="img/2.4_3_confirm.png" alt="3. 出荷待ちステータスを確認（件数確認）">
+      </div>
+    </section>
+
+    <section id="notes">
+      <h2>注意事項</h2>
+      <ul>
+        <li>出荷予定日は必ず当日以降の日付を指定すること。</li>
+        <li>納品先情報は自動入力後に必ず目視で確認すること。</li>
+        <li>エラーが発生した場合は、原因（入力漏れ・フォーマット不一致など）を確認し、修正後に再実行する。</li>
+        <li>個人情報を含む画面は外部公開版では必ずマスク処理を行う。</li>
+      </ul>
+    </section>
+
+    <section id="raci">
+      <h2>RACI定義表</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>作業項目</th>
+            <th>R（実行）</th>
+            <th>A（責任）</th>
+            <th>C（相談）</th>
+            <th>I（共有）</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>出荷指示の作成</td>
+            <td>受注・出荷指示担当</td>
+            <td>商品管理責任者</td>
+            <td>LOGILESSヘルプセンター</td>
+            <td>出荷担当・配送業者</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  
+  <div data-include="footer.html"></div>
+  <script src="js/include.js" defer></script>
+</body>
+</html>

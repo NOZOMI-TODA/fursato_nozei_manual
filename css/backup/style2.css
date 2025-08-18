@@ -1,0 +1,212 @@
+
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #fff;
+    color: #000;
+}
+header {
+    padding: 20px;
+}
+header nav {
+    display: flex;
+    gap: 12px;
+    margin-top: 10px;
+}
+header nav a {
+    padding: 10px 16px;
+    border: 1px solid #333;
+    border-radius: 4px;
+    background-color: #f0f0f0;
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+}
+header nav a:hover {
+    background-color: #ddd;
+}
+main {
+    padding: 40px;
+}
+h1, h2 {
+    color: #222;
+}
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 40px;
+}
+th, td {
+    border: 1px solid #aaa;
+    padding: 10px;
+    text-align: left;
+}
+th {
+    background-color: #e8e8e8;
+}
+footer {
+    padding: 20px 40px;
+    border-top: 1px solid #ccc;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9em;
+}
+footer a {
+    margin-right: 10px;
+    text-decoration: none;
+    color: #000;
+    border-bottom: 1px dotted #000;
+}
+footer a:hover {
+    text-decoration: underline;
+}
+
+
+/* Flow step visual styling */
+.flow-step-boxed .step {
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 1em;
+  margin-bottom: 1.5em;
+  background: #f9f9f9;
+}
+.step-phase {
+  font-size: 1em;
+  font-weight: bold;
+  color: #888;
+}
+.step-number {
+  font-size: 1.3em;
+  font-weight: bold;
+  color: #0078D7;
+}
+.step-title a {
+  font-size: 1.2em;
+  font-weight: normal;
+  color: #0078D7;
+  text-decoration: none;
+}
+.step-title a:hover {
+  text-decoration: underline;
+}
+
+/* Anchor color unification */
+a {
+  color: #0078D7;
+}
+
+
+/* テーブルオブコンテンツ（TOC）視認性向上 */
+.toc {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 1em;
+  margin: 1.5em 0;
+  background-color: #f2f2f2;
+}
+
+.toc h2 {
+  font-size: 1.5em;
+  margin-top: 0;
+  margin-bottom: 0.75em;
+  font-weight: bold;
+  color: #333;
+}
+
+.toc ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.toc li {
+  margin-bottom: 0.5em;
+}
+
+.toc li ul {
+  padding-left: 1.5em;
+  margin-top: 0.3em;
+}
+
+.toc a {
+  color: #0078D7;
+  text-decoration: none;
+  font-weight: normal;
+}
+
+.toc a:hover {
+  text-decoration: underline;
+}
+
+
+
+/* ========== 追加: 画像のレスポンシブ対応 ========== */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ========== 追加: テーブルの視認性（ゼブラ） ========== */
+table tbody tr:nth-child(even) td {
+  background-color: #fafafa;
+}
+
+/* ========== 追加: フォーカス可視化（アクセシビリティ） ========== */
+a:focus, button:focus, [tabindex]:focus {
+  outline: 2px solid #0078D7;
+  outline-offset: 2px;
+}
+
+/* ========== 追加: 必須ラベルの表現 ========== */
+.required::after {
+  content: " *";
+  color: #c00;
+  font-weight: bold;
+}
+
+/* ========== 追加: 注記・注意の見た目 ========== */
+.note {
+  background: #fff8e1;
+  border-left: 4px solid #f0c000;
+  padding: 10px 12px;
+  margin: 12px 0;
+}
+.alert {
+  background: #ffeaea;
+  border-left: 4px solid #d93025;
+  padding: 10px 12px;
+  margin: 12px 0;
+}
+
+/* ========== 追加: 印刷用スタイル ========== */
+@page {
+  size: A4;
+  margin: 15mm;
+}
+@media print {
+  header, footer, nav, .no-print {
+    display: none !important;
+  }
+  body {
+    color: #000;
+    font-size: 11pt;
+  }
+  h1, h2, h3 {
+    page-break-after: avoid;
+  }
+  table {
+    page-break-inside: avoid;
+  }
+  a[href]:after {
+    content: " (" attr(href) ")";
+    font-size: 9pt;
+  }
+}
+
+/* ========== 追加: 小さめ画面での余白調整 ========== */
+@media (max-width: 768px) {
+  main {
+    padding: 20px;
+  }
+}

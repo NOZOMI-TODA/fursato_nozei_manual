@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>1.5 在庫情報の共有（1.5_Inventory_share）</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div data-include="header.html"></div>
+
+
+
+<main>
+  <section id="overview">
+    <h2>【業務概要】</h2>
+    <p>在庫の最新情報を社外の関係者に共有する業務。主に受注可否判断や出荷計画立案に必要な情報を正確・迅速に伝達する。<br>
+    共有内容には、謝礼品番号、謝礼品名、在庫数（残高）が含まれる。</p>
+  </section>
+
+  <section id="login">
+    <h2>【ログイン情報・接続先】</h2>
+
+    <h3>LOGILESS（在庫管理システム）</h3>
+    <table>
+      <thead><tr><th>項目</th><th>内容</th></tr></thead>
+      <tbody>
+        <tr><td>システム名</td><td>LOGILESS（在庫管理システム）</td></tr>
+        <tr><td>ログインURL</td><td><a href="https://app.logiless.com/" target="_blank" rel="noopener">https://app.logiless.com/</a></td></tr>
+        <tr><td>ユーザーID</td><td>mimurafoods@googlegroups.com</td></tr>
+        <tr><td>パスワード</td><td>Mimura20250712</td></tr>
+      </tbody>
+    </table>
+
+    <h3>メール</h3>
+    <table>
+      <thead><tr><th>項目</th><th>内容</th></tr></thead>
+      <tbody>
+        <tr><td>システム名</td><td>メール</td></tr>
+        <tr><td>相手先名</td><td>加古川市ふるさと納税サポート室</td></tr>
+        <tr><td>メールアドレス</td><td>support@kakogawa.furusato-lg.jp</td></tr>
+      </tbody>
+    </table>
+
+    <p class="note">※ログイン情報は最新版をIT管理者に確認。外部公開時はマスキング。</p>
+  </section>
+
+  <section>
+    <h2>【テーブルオブコンテンツ（TOC）】</h2>
+    <div class="toc">
+      <h2>目次</h2>
+      <ul>
+        <li><a href="#overview">業務概要</a></li>
+        <li><a href="#login">ログイン情報・接続先</a></li>
+        <li><a href="#steps">操作手順</a>
+          <ul>
+            <li><a href="#step1">1. 使用ツールにログイン</a></li>
+            <li><a href="#step2">2. 組織を選択</a></li>
+            <li><a href="#step3">3. 在庫メニューを選択</a></li>
+            <li><a href="#step4">4. 対象SKUをすべて選択</a></li>
+            <li><a href="#step5">5. 選択したSKUデータをダウンロード</a></li>
+            <li><a href="#step6">6. ファイルフォーマットを選ぶ</a></li>
+            <li><a href="#step7">7. ファイルエクスポート</a></li>
+            <li><a href="#step8">8. ファイルメール送信</a></li>
+          </ul>
+        </li>
+        <li><a href="#notes">注意事項</a></li>
+        <li><a href="#raci">RACI定義表</a></li>
+        <li><a href="#footer">フッター</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="steps">
+    <h2>【操作手順】</h2>
+
+    <article id="step1">
+      <h3>1. 使用ツールにログイン</h3>
+      <p>ロジレスにログイン</p>
+      <img src="img/1.5_1_login.png" alt="1. 使用ツールにログイン（結果）">
+    </article>
+
+    <article id="step2">
+      <h3>2. 組織を選択</h3>
+      <p>オペレータータブを選択して、「株式会社ミムラフーヅ（オペレーター）」をクリック</p>
+      <img src="img/1.5_2_orgoption.png" alt="2. 組織を選択（結果）">
+    </article>
+
+    <article id="step3">
+      <h3>3. 在庫メニューを選択</h3>
+      <p>サイドメニューの「在庫」をクリック</p>
+      <img src="img/1.5_3_inventorymenu.png" alt="3. 在庫メニューを選択（結果）">
+    </article>
+
+    <article id="step4">
+      <h3>4. 対象SKUをすべて選択</h3>
+      <p>メイン画面下にスクロールして、在庫から商品コード左横のチェックボックスを選択（すべてのSKUがチェックされます）</p>
+      <img src="img/1.5_4_selectinventory.png" alt="4. 対象SKUをすべて選択（結果）">
+    </article>
+
+    <article id="step5">
+      <h3>5. 選択したSKUデータをダウンロード</h3>
+      <p>在庫一覧のタブ「ダウンロード」をクリック</p>
+      <img src="img/1.5_5_filedl.png" alt="5. 選択したSKUデータをダウンロード（結果）">
+    </article>
+
+    <article id="step6">
+      <h3>6. ファイルフォーマットを選ぶ</h3>
+      <p>画面右のプルダウンボタンを押して「レジホーム宛て」のファイルフォーマットを選択する</p>
+      <img src="img/1.5_6_selectform.png" alt="6. ファイルフォーマットを選ぶ（結果）">
+    </article>
+
+    <article id="step7">
+      <h3>7. ファイルエクスポート</h3>
+      <p>エクスポート形式に「レジホーム宛て」が選ばれていることを確認して「エクスポート」ボタンを押す</p>
+      <img src="img/1.5_7_export.png" alt="7. ファイルエクスポート（結果）">
+    </article>
+
+    <article id="step8">
+      <h3>8. ファイルメール送信</h3>
+      <p>ダウンロードされたCSVファイルを確認して、メールに添付して「加古川市ふるさと納税サポート室」に送信<br>
+      ※メールアドレスは「ログイン情報・接続先」を参照</p>
+      <!-- 画像なし -->
+    </article>
+  </section>
+
+  <section id="notes">
+    <h2>【注意事項】</h2>
+    <ul>
+      <li>在庫数はリアルタイム更新ではない場合があるため、時間差に注意。</li>
+      <li>欠品や入荷遅延などの重要情報はメール＋Slackの両方で通知する。</li>
+      <li>共有前に誤情報が含まれていないか必ず確認。</li>
+    </ul>
+  </section>
+
+  <section id="raci">
+    <h2>【RACI定義表】</h2>
+    <table>
+      <thead><tr><th>R（実行）</th><th>A（責任）</th><th>C（相談）</th><th>I（共有）</th></tr></thead>
+      <tbody>
+        <tr><td>入庫・出荷担当</td><td>商品管理責任者</td><td>商品管理担当</td><td>加古川市ふるさと納税サポート室</td></tr>
+      </tbody>
+    </table>
+  </section>
+</main>
+
+
+  <div data-include="footer.html"></div>
+  <script src="js/include.js" defer></script>
+</body>
+</html>

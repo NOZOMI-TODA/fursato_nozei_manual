@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>3.1 出荷作業準備マニュアル</title>
+  <!-- 推奨パス構成（仕様準拠）：css/style.css -->
+  <link rel="stylesheet" href="css/style.css">
+  <!-- 単体動作のためのインラインCSS（外部CSSが無い環境でもスタイル適用） -->
+  <style>
+
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #fff;
+    color: #000;
+}
+header {
+    padding: 20px;
+}
+header nav {
+    display: flex;
+    gap: 12px;
+    margin-top: 10px;
+}
+header nav a {
+    padding: 10px 16px;
+    border: 1px solid #333;
+    border-radius: 4px;
+    background-color: #f0f0f0;
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+}
+header nav a:hover {
+    background-color: #ddd;
+}
+main {
+    padding: 40px;
+}
+h1, h2 {
+    color: #222;
+}
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 40px;
+}
+th, td {
+    border: 1px solid #aaa;
+    padding: 10px;
+    text-align: left;
+}
+th {
+    background-color: #e8e8e8;
+}
+footer {
+    padding: 20px 40px;
+    border-top: 1px solid #ccc;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9em;
+}
+footer a {
+    margin-right: 10px;
+    text-decoration: none;
+    color: #000;
+    border-bottom: 1px dotted #000;
+}
+footer a:hover {
+    text-decoration: underline;
+}
+
+
+/* Flow step visual styling */
+.flow-step-boxed .step {
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 1em;
+  margin-bottom: 1.5em;
+  background: #f9f9f9;
+}
+.step-phase {
+  font-size: 1em;
+  font-weight: bold;
+  color: #888;
+}
+.step-number {
+  font-size: 1.3em;
+  font-weight: bold;
+  color: #0078D7;
+}
+.step-title a {
+  font-size: 1.2em;
+  font-weight: normal;
+  color: #0078D7;
+  text-decoration: none;
+}
+.step-title a:hover {
+  text-decoration: underline;
+}
+
+/* Anchor color unification */
+a {
+  color: #0078D7;
+}
+
+
+/* テーブルオブコンテンツ（TOC）視認性向上 */
+.toc {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 1em;
+  margin: 1.5em 0;
+  background-color: #f2f2f2;
+}
+
+.toc h2 {
+  font-size: 1.5em;
+  margin-top: 0;
+  margin-bottom: 0.75em;
+  font-weight: bold;
+  color: #333;
+}
+
+.toc ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.toc li {
+  margin-bottom: 0.5em;
+}
+
+.toc li ul {
+  padding-left: 1.5em;
+  margin-top: 0.3em;
+}
+
+.toc a {
+  color: #0078D7;
+  text-decoration: none;
+  font-weight: normal;
+}
+
+.toc a:hover {
+  text-decoration: underline;
+}
+
+
+
+/* ========== 追加: 画像のレスポンシブ対応 ========== */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ========== 追加: テーブルの視認性（ゼブラ） ========== */
+table tbody tr:nth-child(even) td {
+  background-color: #fafafa;
+}
+
+/* ========== 追加: フォーカス可視化（アクセシビリティ） ========== */
+a:focus, button:focus, [tabindex]:focus {
+  outline: 2px solid #0078D7;
+  outline-offset: 2px;
+}
+
+/* ========== 追加: 必須ラベルの表現 ========== */
+.required::after {
+  content: " *";
+  color: #c00;
+  font-weight: bold;
+}
+
+/* ========== 追加: 注記・注意の見た目 ========== */
+.note {
+  background: #fff8e1;
+  border-left: 4px solid #f0c000;
+  padding: 10px 12px;
+  margin: 12px 0;
+}
+.alert {
+  background: #ffeaea;
+  border-left: 4px solid #d93025;
+  padding: 10px 12px;
+  margin: 12px 0;
+}
+
+/* ========== 追加: 印刷用スタイル ========== */
+@page {
+  size: A4;
+  margin: 15mm;
+}
+@media print {
+  header, footer, nav, .no-print {
+    display: none !important;
+  }
+  body {
+    color: #000;
+    font-size: 11pt;
+  }
+  h1, h2, h3 {
+    page-break-after: avoid;
+  }
+  table {
+    page-break-inside: avoid;
+  }
+  a[href]:after {
+    content: " (" attr(href) ")";
+    font-size: 9pt;
+  }
+}
+
+/* ========== 追加: 小さめ画面での余白調整 ========== */
+@media (max-width: 768px) {
+  main {
+    padding: 20px;
+  }
+}
+
+  
+
+/* --- Global Nav Fixes --- */
+header { background: #fff; }
+.global-nav { margin-top: 6px; border-top: 1px solid #eee; border-bottom: 1px solid #eee; }
+.global-nav ul { list-style: none; display: flex; flex-wrap: wrap; gap: 12px; padding: 8px 0; margin: 0; }
+.global-nav a { text-decoration: none; }
+.global-nav a[aria-current="page"] { font-weight: 700; text-decoration: underline; }
+/* Ensure TOC doesn't overlap even if header content grows */
+.toc { clear: both; margin-top: 12px; }
+/* Basic responsive spacing */
+@media (max-width: 640px) {
+  .global-nav ul { gap: 8px; }
+}
+
+</style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+  <div data-include="header.html"></div>
+
+
+
+<!-- TOCはヘッダー直下（仕様準拠） -->
+<nav class="toc">
+  <h2>目次</h2>
+  <ul>
+    <li><a href="#overview">業務概要</a></li>
+    <li><a href="#login">ログイン情報・接続先</a></li>
+    <li><a href="#steps">操作手順</a>
+      <ul>
+        <li><a href="#step1">1. 作業日・倉庫の確認</a></li>
+        <li><a href="#step2">2. 使用ツールにログイン</a></li>
+        <li><a href="#step3">3. 組織を選択</a></li>
+        <li><a href="#step4">4. 出荷待ちを選択</a></li>
+        <li><a href="#step5">5. 対象の注文を出荷作業開始に変更</a></li>
+        <li><a href="#step6">6. 出荷グループを作成する</a></li>
+        <li><a href="#step7">7. 出荷作業中を確認</a></li>
+      </ul>
+    </li>
+    <li><a href="#notes">注意事項</a></li>
+    <li><a href="#raci">RACI定義表</a></li>
+    <li><a href="#footer">フッター</a></li>
+  </ul>
+</nav>
+
+<main>
+  <section id="overview">
+    <h2>業務概要</h2>
+    <p><strong>目的</strong>：出荷当日の作業（資材準備・ピッキングリスト出力／梱包形態の事前確認・伝票準備）を標準化し、誤出荷・欠品ミスを防止する。</p>
+    <p><strong>範囲</strong>：出荷指示受領後ピッキング開始直前まで。作業日の確認／「出荷待ち」から「出荷作業中」へのステータス変更／資材の数量確認補充。</p>
+    <p><strong>前提</strong>：受注確定・在庫引当済み、LOGILESSの出荷指示が作成済み。</p>
+    <p><strong>成果物</strong>：ステータス変更（出荷作業中）／出荷資材一式。</p>
+  </section>
+
+  <section id="login">
+    <h2>ログイン情報・接続先</h2>
+    <p class="note">ログイン情報は定期的に変更されるため、最新版はIT管理者に確認してください。外部公開時はマスキングまたは非表示。</p>
+
+    <h3>LOGILESS</h3>
+    <table>
+      <thead><tr><th>項目</th><th>内容</th></tr></thead>
+      <tbody>
+        <tr><td>システム名</td><td>LOGILESS</td></tr>
+        <tr><td>ログインURL</td><td><a href="https://app.logiless.com/" target="_blank" rel="noopener">https://app.logiless.com/</a></td></tr>
+        <tr><td>ユーザーID</td><td>mimurafoods@googlegroups.com</td></tr>
+        <tr><td>パスワード</td><td>Mimura20250712</td></tr>
+        <tr><td>備考</td><td>社内利用に限り平文可。外部公開時はマスキングまたは非表示。</td></tr>
+      </tbody>
+    </table>
+
+    <h3>プリンタ</h3>
+    <table>
+      <thead><tr><th>項目</th><th>内容</th></tr></thead>
+      <tbody>
+        <tr><td>システム名</td><td>プリンタ</td></tr>
+        <tr><td>接続方法</td><td>ネットワーク接続</td></tr>
+        <tr><td>アカウント</td><td>なし</td></tr>
+        <tr><td>備考</td><td>A4/ラベルの用紙設定を確認</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section id="steps">
+    <h2>操作手順</h2>
+
+    <div id="step1">
+      <strong>1. 作業日・倉庫の確認</strong>
+      <p>他の出荷作業・倉庫利用日を考慮して、作業ミスが生じない日程を決定する。</p>
+      <!-- 仕様により画像が無い場合は表示しない（ラベル文字も出さない） -->
+    </div>
+
+    <div id="step2">
+      <strong>2. 使用ツールにログイン</strong>
+      <p>ID・パスワードを使用してLOGILESSにアクセスし、管理画面へログインします。</p>
+      <img src="img/4.1_1_login.png" alt="2. 使用ツールにログイン（ログイン画面）">
+    </div>
+
+    <div id="step3">
+      <strong>3. 組織を選択</strong>
+      <p>ログイン後、画面上部の組織選択から「オペレーター」タブを選択し「株式会社ミムラフーズ（オペレーター）」を選択します。</p>
+      <img src="img/4.1_2_orgoption.png" alt="3. 組織を選択（選択画面）">
+    </div>
+
+    <div id="step4">
+      <strong>4. 出荷待ちを選択</strong>
+      <p>左メインメニュー「ダッシュボード」を選択し、出荷の表から「出荷待ち」の「数字（件数）」を選ぶ。</p>
+      <img src="img/4.1_3_selectorder.png" alt="4. 出荷待ちを選択（件数確認）">
+    </div>
+
+    <div id="step5">
+      <strong>5. 対象の注文を出荷作業開始に変更</strong>
+      <p>対象の注文をチェックボックスにチェックを入れる。「出荷作業を開始」タブをクリックする。</p>
+      <img src="img/4.1_4_start.png" alt="5. 出荷作業開始に変更（確認画面）">
+    </div>
+
+    <div id="step6">
+      <strong>6. 出荷グループを作成する</strong>
+      <p>出荷作業中の出荷伝票をグループ化することができます。グループ名は「作業日（yyyy/mm/dd）」で記載します。</p>
+      <img src="img/4.1_5_makegroup.png" alt="6. 出荷グループを作成する（グループ化）">
+    </div>
+
+    <div id="step7">
+      <strong>7. 出荷作業中を確認</strong>
+      <p>出荷作業中に対象の出荷伝票が作成できているか確認する。出荷グループを選択して、出荷作業リストが存在しているか確認する。</p>
+      <img src="img/4.1_6_confirm.png" alt="7. 出荷作業中を確認（確認画面）">
+    </div>
+  </section>
+
+  <section id="notes">
+    <h2>注意事項</h2>
+    <ul>
+      <li><strong>資格情報の管理</strong>：ログイン情報は必ず最新版を使用し、外部公開時はマスキング。</li>
+      <li><strong>ステータス変更の徹底</strong>：「出荷待ち」→「出荷作業中」への更新を忘れない。</li>
+      <li><strong>ハイシーズン対応</strong>：夏季・年末は保冷剤係数を増やす。</li>
+      <li><strong>例外処理</strong>：欠品・分納が発生した場合はLOGILESS備考欄へ記録し、担当者に即時連絡する。</li>
+    </ul>
+  </section>
+
+  <section id="raci">
+    <h2>RACI定義表</h2>
+    <table>
+      <thead><tr><th>作業項目</th><th>R（実行）</th><th>A（責任）</th><th>C（相談）</th><th>I（共有）</th></tr></thead>
+      <tbody>
+        <tr><td>出荷準備</td><td>出荷担当</td><td>商品管理責任者</td><td>受注・出荷指示担当</td><td>出荷担当担当</td></tr>
+      </tbody>
+    </table>
+  </section>
+</main>
+
+
+  <div data-include="footer.html"></div>
+  <script src="js/include.js" defer></script>
+</body>
+</html>
