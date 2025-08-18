@@ -1,6 +1,6 @@
-// /js/include.js (with CSS injection & mobile toggle)
+// /js/include.js (v3 - inject brand + manual theme CSS)
 (function () {
-  const VERSION = "20250818"; // 変更時に更新（キャッシュ対策）
+  const VERSION = "20250818c"; // Update to bust cache
   const includes = document.querySelectorAll("[data-include]");
   const currentPath = location.pathname.split("/").pop() || "index.html";
 
@@ -20,9 +20,8 @@
       }
     })
   ).then(() => {
-    // inject header-footer.css once
-    (function ensureBrandCSS(){
-      const href = "css/header-footer.css";
+    // Inject CSS once (header-footer.css + manual-theme.css)
+    function ensureCss(href) {
       const exists = !!document.querySelector(`link[rel="stylesheet"][href^="${href}"]`);
       const inSheets = Array.from(document.styleSheets || []).some(s => s.href && s.href.indexOf(href) !== -1);
       if (!exists && !inSheets) {
@@ -31,9 +30,11 @@
         link.href = `${href}?v=${VERSION}`;
         document.head.appendChild(link);
       }
-    })();
+    }
+    ensureCss("css/header-footer.css");
+    ensureCss("css/manual-theme.css");
 
-    // active nav
+    // Active nav
     try {
       const navLinks = document.querySelectorAll(".global-nav a[href]");
       navLinks.forEach((a) => {
@@ -46,7 +47,7 @@
       console.warn("active nav error:", e);
     }
 
-    // mobile toggle
+    // Mobile toggle
     try {
       const toggle = document.querySelector(".nav-toggle");
       const nav = document.querySelector(".global-nav");
@@ -54,7 +55,6 @@
         toggle.addEventListener("click", () => {
           const open = nav.classList.toggle("is-open");
           toggle.setAttribute("aria-expanded", open ? "true" : "false");
-          // animate icon
           const bars = toggle.querySelectorAll(".bar");
           if (bars.length === 3) {
             bars[0].style.top = open ? "19px" : "12px";
