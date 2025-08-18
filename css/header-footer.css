@@ -1,0 +1,102 @@
+/* css/header-footer.css : Header & Footer theming (no conflict with existing CSS) */
+:root{
+  --brand-bg: #0b3d2e;       /* 深いグリーン */
+  --brand-text: #ffffff;
+  --brand-accent: #e4c55b;   /* ゴールド */
+  --surface-0: #0f172a;      /* footer背景の濃紺 */
+  --text-muted: #94a3b8;
+  --container: 1200px;
+}
+
+.container{ max-width: var(--container); margin: 0 auto; padding: 0 16px; }
+
+/* Header */
+.site-header{
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: var(--brand-bg);
+  color: var(--brand-text);
+  box-shadow: 0 2px 8px rgba(0,0,0,.08);
+}
+.header-inner{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 12px 0;
+}
+.logo{ text-decoration: none; color: inherit; }
+.logo-text{ font-weight: 700; letter-spacing: .02em; white-space: nowrap; }
+
+.global-nav ul{
+  display: flex;
+  gap: 24px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.global-nav a{
+  color: var(--brand-text);
+  text-decoration: none;
+  padding: 8px 4px;
+  border-bottom: 2px solid transparent;
+  transition: border-color .2s ease;
+}
+.global-nav a:hover{ border-bottom-color: rgba(255,255,255,.6); }
+.global-nav a.is-active{ border-bottom-color: var(--brand-accent); }
+
+/* Hamburger */
+.nav-toggle{
+  display: none;
+  background: none;
+  border: none;
+  width: 40px;
+  height: 40px;
+  position: relative;
+}
+.nav-toggle .bar{
+  position: absolute;
+  left: 8px; right: 8px;
+  height: 2px;
+  background: var(--brand-text);
+  transition: transform .2s ease, opacity .2s ease, top .2s ease;
+}
+.nav-toggle .bar:nth-child(1){ top: 12px; }
+.nav-toggle .bar:nth-child(2){ top: 19px; }
+.nav-toggle .bar:nth-child(3){ top: 26px; }
+
+/* Footer */
+.site-footer{
+  background: var(--surface-0);
+  color: var(--text-muted);
+  margin-top: 48px;
+}
+.footer-inner{
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 24px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+}
+.site-footer a{ color: #cbd5e1; text-decoration: underline; }
+.footer-links a{ margin-right: 12px; }
+
+/* Responsive */
+@media (max-width: 960px){
+  .nav-toggle{ display: inline-block; }
+  .global-nav{
+    position: absolute;
+    left: 0; right: 0;
+    top: calc(100%);
+    background: var(--brand-bg);
+    display: none;
+    padding: 8px 16px 12px;
+    border-top: 1px solid rgba(255,255,255,.08);
+  }
+  .global-nav ul{ flex-direction: column; gap: 8px; }
+  .global-nav.is-open{ display: block; }
+}
