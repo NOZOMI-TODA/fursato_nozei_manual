@@ -1,6 +1,6 @@
-// /js/include.js (v3 - inject brand + manual theme CSS)
+// /js/include.js (v3.1) — design-only loader for door pages
 (function () {
-  const VERSION = "20250818c"; // Update to bust cache
+  const VERSION = "20250818i"; // bump for cache busting
   const includes = document.querySelectorAll("[data-include]");
   const currentPath = location.pathname.split("/").pop() || "index.html";
 
@@ -20,6 +20,7 @@
       }
     })
   ).then(() => {
+    // Inject CSS
     function ensureCss(href) {
       const exists = !!document.querySelector(`link[rel="stylesheet"][href^="${href}"]`);
       const inSheets = Array.from(document.styleSheets || []).some(s => s.href && s.href.indexOf(href) !== -1);
@@ -42,9 +43,7 @@
         const target = href.split("/").pop();
         if (target === currentPath) a.classList.add("is-active");
       });
-    } catch (e) {
-      console.warn("active nav error:", e);
-    }
+    } catch (e) { console.warn("active nav error:", e); }
 
     // Mobile toggle
     try {
@@ -64,10 +63,18 @@
           }
         });
       }
-    } catch (e) {
-      console.warn("toggle nav error:", e);
-    } finally {
-      document.documentElement.classList.remove("inc-loading");
+    } catch (e) { console.warn("toggle nav error:", e); }
+
+  }).finally(() => {
+    document.documentElement.classList.remove("inc-loading");
+    // ---- Door pages: design-only runtime wrappers ----
+    const DOOR = new Set(["product_register.html","order_manual.html","shipment_manual.html"]);
+    const file = location.pathname.split("/").pop() || "index.html";
+    if (DOOR.has(file)) {
+      const s = document.createElement("script");
+      s.src = `js/door-visual.js?v=${VERSION}`;
+      s.defer = true;
+      document.body.appendChild(s);
     }
   });
 })();
