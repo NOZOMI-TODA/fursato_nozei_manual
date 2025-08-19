@@ -1,41 +1,44 @@
-
-<!DOCTYPE html>
-
+<!doctype html>
 <html lang="ja">
 <head>
-<meta charset="utf-8"/>
+  <meta charset="utf-8">
+  <title>1.1 商品マスタ登録・更新</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
-<title>1.1 商品マスタ登録・更新</title>
-<link href="css/style.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="css/manual.css?v=1.1">
 </head>
 <body>
   <div data-include="header.html"></div>
+  <main class="container">
 
+<nav class="breadcrumb" aria-label="breadcrumb"><a href="index.html">ホーム</a><span class="sep">›</span><a href="shipment_manual.html">出荷・納品</a><span class="sep">›</span><span>1.1 product register</span></nav>
+<h1 class="page-title">1.1 商品マスタ登録・更新</h1>
 
-<nav class="toc">
-<h2>目次</h2>
-<ul>
+<section class="section-block toc" aria-labelledby="toc">
+  <h2 id="toc" class="section-block__title">目次</h2>
+  <ul>
 <li><a href="#overview">業務概要</a></li>
 <li><a href="#login">ログイン情報</a></li>
 <li><a href="#steps">操作手順（LOGILESS）</a><ul><li><a href="#step1">1. 使用ツールにログイン</a></li><li><a href="#step2">2. 組織を選択</a></li><li><a href="#step3">3. マスタをクリック</a></li><li><a href="#step4">4. 新規登録をクリック</a></li><li><a href="#step5">5. 必要情報を入力</a></li><li><a href="#step6">6. 登録</a></li></ul></li>
 <li><a href="#notes">登録時の注意点</a></li>
 <li><a href="#raci">RACI定義</a></li>
 </ul>
-</nav>
-<main>
-    <nav class="breadcrumb" aria-label="breadcrumb"><a href="index.html">ホーム</a><span class="sep">›</span><a href="shipment_manual.html">出荷・納品</a><span class="sep">›</span><span>1.1 product register</span></nav>
-<section id="overview">
-<h2>業務概要</h2>
-<p>商品マスタ登録は、LOGILESSにおいて商品の基本情報を一元管理する出発点です。受注・在庫・出荷すべての処理に反映されるため、入力ミスや重複登録がないよう慎重な対応が求められます。</p>
 </section>
-<section id="login">
-<h2>ログイン情報（マーチャント用）</h2>
+<section class="section-block" aria-labelledby="overview">
+
+<h2 id="overview" class="section-block__title">業務概要</h2>
+<p>商品マスタ登録は、LOGILESSにおいて商品の基本情報を一元管理する出発点です。受注・在庫・出荷すべての処理に反映されるため、入力ミスや重複登録がないよう慎重な対応が求められます。</p>
+
+</section>
+<section class="section-block" aria-labelledby="login">
+
+<h2 id="login" class="section-block__title">ログイン情報（マーチャント用）</h2>
 <p>※ログイン情報は定期的に変更されるため、最新版はIT管理者に確認してください。</p>
-<table><thead><tr><th>項目</th><th>内容</th></tr></thead><tbody><tr><td>ログインID</td><td>mimurafoods@googlegroups.com</td></tr><tr><td>パスワード</td><td>Mimura20250712</td></tr><tr><td>ログインURL</td><td><a href="https://app2.logiless.com/merchant/sign_in" target="_blank">https://app2.logiless.com/merchant/sign_in</a></td></tr></tbody></table></section>
-<section id="steps">
-<h2>操作手順（LOGILESS）</h2>
-<ol>
+<table><thead><tr><th>項目</th><th>内容</th></tr></thead><tbody><tr><td>ログインID</td><td>mimurafoods@googlegroups.com</td></tr><tr><td>パスワード</td><td>Mimura20250712</td></tr><tr><td>ログインURL</td><td><a href="https://app2.logiless.com/merchant/sign_in" target="_blank">https://app2.logiless.com/merchant/sign_in</a></td></tr></tbody></table>
+</section>
+<section class="section-block" aria-labelledby="steps">
+
+<h2 id="steps" class="section-block__title">操作手順（LOGILESS）</h2>
+<ol class="steps">
 <li id="step1"><strong>使用ツールにログイン</strong><br/>LOGILESSにログイン<br/><img alt="ログイン画面" src="img/1.1_1_login.png"/></li>
 <li id="step2"><strong>組織を選択</strong><br/>組織を選択：「株式会社ミムラフーヅ（マーチャント）」をクリック<br/><img alt="組織選択" src="img/1.1_2_orgoption.png"/></li>
 <li id="step3"><strong>マスタをクリック</strong><br/>左サイドメニューの下部にある「マスタ」をクリック<br/><img alt="マスタメニュー" src="img/1.1_3_master.png"/></li>
@@ -70,28 +73,32 @@
 </table><img alt="入力画面" src="img/1.1_5_newproduct.png"/></li>
 <li id="step6"><strong>登録</strong><br/>入力内容を確認して登録ボタンをクリック<br/><img alt="登録ボタン" src="img/1.1_6_rejister.png"/></li>
 </ol>
+
 </section>
-<section id="notes">
-<h2>登録時の注意点</h2>
+<section class="section-block" aria-labelledby="notes">
+
+<h2 id="notes" class="section-block__title">登録時の注意点</h2>
 <ul>
 <li>商品コードの重複は登録不可。発注先・物流ラベルと照合済のコードを必ず使用すること</li>
 <li>表示名に絵文字・全角記号などを含めない</li>
 <li>SKUは実際の物流／販売単位に合わせて正しく設定すること</li>
 <li>温度帯設定が誤っていると出荷指示が分離されるため要注意</li>
 </ul>
+
 </section>
-<section id="raci">
-<h2>RACI定義（商品マスタ登録）</h2>
+<section class="section-block" aria-labelledby="raci">
+
+<h2 id="raci" class="section-block__title">RACI定義（商品マスタ登録）</h2>
 <table>
 <tr><th>作業項目</th><th>R（実行）</th><th>A（責任）</th><th>C（相談）</th><th>I（共有）</th></tr>
 <tr><td>商品コード・商品名の登録</td><td>マーチャント（商品管理）</td><td>商品管理責任者</td><td>EC運営・出荷担当</td><td>在庫更新担当者</td></tr>
 <tr><td>SKUコード・温度帯・分類設定</td><td>マーチャント（商品管理）</td><td>商品管理責任者</td><td>出荷担当</td><td>在庫更新担当者</td></tr>
 <tr><td>単位・サイズ入力</td><td>マーチャント（商品管理）</td><td>商品管理責任者</td><td>出荷担当</td><td>EC運営担当</td></tr>
 </table>
-</section>
-</main>
 
+</section>
+  </main>
   <div data-include="footer.html"></div>
-  <script src="js/include.js" defer></script>
+  <script src="js/include.js?v=1.1" defer></script>
 </body>
 </html>
