@@ -1,16 +1,24 @@
 
 /* css/door-hotfix.css — visibility + minimal styling for tables/lists (design-only) */
-:root{ --border:#e2e8f0; --bg-soft:#f8fafc; --text:#0f172a; }
+:root{
+  --border:#e2e8f0;
+  --bg-soft:#f8fafc;
+  --text:#0f172a;
+}
+/* Ensure text is visible */
 main, main * { color: var(--text); }
+/* TABLES: force display even if older CSS hides them */
 main table{ display: table !important; border-collapse: collapse; width: 100%; }
 main thead{ display: table-header-group !important; }
 main tbody{ display: table-row-group !important; }
 main tr{ display: table-row !important; }
 main th, main td{ display: table-cell !important; padding: 8px 10px; border-bottom: 1px solid var(--border); vertical-align: top; }
 main thead th{ background: var(--bg-soft); font-weight: 700; }
+/* LISTS: force bullets + spacing */
 main ul, main ol{ display: block !important; margin: 0 0 12px; padding-left: 20px; }
 main ul li{ display: list-item !important; list-style: disc; }
 main ol li{ display: list-item !important; list-style: decimal; }
+/* Section block fallback borders (if manual-theme.css missing) */
 .section-block{ border:1px solid var(--border); border-radius:12px; background:#fff; padding:16px; margin:16px 0; }
 .section-block__title{ position:relative; padding-left:12px; font-weight:700; }
 .section-block__title::before{ content:""; position:absolute; left:0; top:6px; bottom:6px; width:4px; background:#e4c55b; border-radius:2px; }
