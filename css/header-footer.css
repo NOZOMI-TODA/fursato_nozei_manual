@@ -1,22 +1,14 @@
-/* css/header-footer.css — design-only v4 */
+
 :root{ --brand:#0b3d2e; --ink:#fff; --accent:#e4c55b; --container:1200px; }
-*{box-sizing:border-box}
-html,body{margin:0;padding:0}
+*{box-sizing:border-box} html,body{margin:0;padding:0}
 body{font:16px/1.8 system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:#0f172a;background:#fff}
 a{color:inherit}
-
 .container{max-width:var(--container);margin:0 auto;padding:0 16px}
-
-/* Header */
-.site-header{background:var(--brand);color:var(--ink)}
-.site-header .bar{display:flex;align-items:center;gap:16px;min-height:56px}
+.site-header{background:var(--brand);color:var(--ink)} .site-header .bar{display:flex;align-items:center;gap:16px;min-height:56px}
 .site-title{font-weight:700}
 .global-nav{margin-left:auto;display:flex;gap:12px;flex-wrap:wrap}
 .global-nav a{color:#fff;text-decoration:none;opacity:.9;padding:10px 10px;border-bottom:2px solid transparent}
-.global-nav a:hover{opacity:1}
-.global-nav a.is-active{border-color:var(--accent)}
-
-/* Footer */
+.global-nav a:hover{opacity:1} .global-nav a.is-active{border-color:var(--accent)}
 .site-footer{border-top:1px solid #e2e8f0;margin-top:32px}
 .site-footer .bar{display:flex;align-items:center;gap:8px;min-height:56px;color:#475569}
 .site-footer a{text-decoration:underline}
