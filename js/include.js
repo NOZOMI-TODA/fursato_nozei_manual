@@ -1,43 +1,16 @@
-// /js/include.js (v3.2) — safe loader: header/footer includes + CSS ensure only
+// /js/include.js (v3.3) — minimal: header/footer includes only (no CSS injection, no DOM mutation)
 (function () {
-  const VERSION = "20250819a"; // cache buster
+  const VERSION = "20250819b";
   const includes = document.querySelectorAll("[data-include]");
-  const currentPath = location.pathname.split("/").pop() || "index.html";
-
-  // Inject CSS (idempotent)
-  function ensureCss(href) {
-    if (document.querySelector(`link[rel="stylesheet"][href*="${href}"]`)) return;
-    const link = document.createElement("link");
-    link.rel = "stylesheet";
-    link.href = `${href}?v=${VERSION}`;
-    document.head.appendChild(link);
-  }
-  ensureCss("css/header-footer.css");
-  ensureCss("css/manual-theme.css");
-  ensureCss("css/door-hotfix.css");
-
-  // Load includes
   Promise.all(Array.from(includes).map(async (el) => {
     const file = el.getAttribute("data-include");
     if (!file) return;
     try {
       const res = await fetch(`${file}?v=${VERSION}`, { cache: "no-store" });
       if (!res.ok) throw new Error(`${res.status} ${res.statusText}`);
-      const html = await res.text();
-      el.innerHTML = html;
+      el.innerHTML = await res.text();
     } catch (e) {
       console.error(`[include] ${file} の読み込みに失敗:`, e);
     }
-  })).then(() => {
-    // Mark active nav
-    try {
-      const navLinks = document.querySelectorAll(".global-nav a[href]");
-      navLinks.forEach((a) => {
-        const href = a.getAttribute("href");
-        if (!href) return;
-        const target = href.split("/").pop();
-        if (target === currentPath) a.classList.add("is-active");
-      });
-    } catch (e) {}
-  });
+  }));
 })();
