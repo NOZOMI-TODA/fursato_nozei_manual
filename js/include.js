@@ -1,5 +1,4 @@
-// ========== js/include.js (rebuild minimal) ==========
-// header.html / footer.html を読み込むだけ。CSSは各ページの<head>で読み込む。
+// js/include.js v3.3 — header/footer include only (no CSS injection, no DOM mutation)
 (function(){
   const VERSION = "20250819c";
   const includes = document.querySelectorAll("[data-include]");
@@ -11,7 +10,6 @@
       el.innerHTML = await res.text();
     }catch(e){ console.error("[include]", file, e); }
   })).then(()=>{
-    // active nav
     const current = location.pathname.split("/").pop() || "index.html";
     document.querySelectorAll(".global-nav a[href]").forEach(a => {
       const target = a.getAttribute("href").split("/").pop();
