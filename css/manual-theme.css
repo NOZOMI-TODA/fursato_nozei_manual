@@ -1,49 +1,47 @@
-/* ========== css/manual-theme.css (rebuild) ========== */
-:root{
-  --accent:#e4c55b; --muted:#64748b; --border:#e2e8f0; --bg-soft:#f8fafc; --container:1200px;
-}
+/* css/manual-theme.css — design-only v4 (no DOM wrapping, no special classes required) */
+:root{ --accent:#e4c55b; --muted:#64748b; --border:#e2e8f0; --bg-soft:#f8fafc; --container:1200px; }
 .container{max-width:var(--container);margin:0 auto;padding:0 16px}
 
+/* Breadcrumb */
 .breadcrumb{font-size:13px;color:var(--muted);margin:12px 0 8px}
 .breadcrumb a{text-decoration:underline;color:inherit}
 .breadcrumb .sep{margin:0 6px}
 
+/* Titles */
 .page-title{margin:8px 0 10px;font-size:28px;font-weight:700;letter-spacing:.01em}
 
-/* 大項目の塊 */
-.section-block{border:1px solid var(--border);border-radius:16px;background:#fff;padding:16px;margin:16px 0;box-shadow:0 1px 3px rgba(0,0,0,.04)}
-.section-block__title{margin:0 0 12px;font-size:20px;font-weight:700;position:relative;padding-left:12px}
-.section-block__title::before{content:"";position:absolute;left:0;top:6px;bottom:6px;width:4px;background:var(--accent);border-radius:2px}
+/* H2 as block title (no wrapper needed) */
+main h2{margin:18px 0 10px;font-size:20px;font-weight:700;position:relative;padding-left:12px}
+main h2::before{content:"";position:absolute;left:0;top:6px;bottom:6px;width:4px;background:var(--accent);border-radius:2px}
 
-/* 2カラム */
+/* "block-ish" spacing using sibling flow (approximate grouping without wrappers) */
+main h2 + *{margin-top:8px}
+main h2 + *:is(p,ul,ol,div,table,section){padding-top:0}
+/* add gentle card feel with separators only via spacing */
+main h2{border-top:1px solid var(--border);padding-top:12px}
+main h2:first-child{border-top:none;padding-top:0}
+
+/* Two columns helper (only if already used) */
 .cols-2{display:grid;gap:16px}
 @media(min-width:960px){.cols-2{grid-template-columns:1fr 1fr}}
 .unit{border:1px solid var(--border);border-radius:12px;background:#fff}
 .unit-head{padding:10px 12px;font-weight:700;border-bottom:1px solid var(--border);background:var(--bg-soft)}
 .unit-body{padding:12px}
 
-/* トップ：カード */
+/* Tables */
+main table{border-collapse:collapse;width:100%}
+main thead th{background:var(--bg-soft)}
+main th,main td{border:1px solid var(--border);padding:10px;text-align:left;vertical-align:top}
+
+/* Lists */
+main ul,main ol{margin:0 0 12px;padding-left:20px}
+main ul{list-style:disc}
+main ol{list-style:decimal}
+
+/* Cards (if already present in HTML) */
 .section-grid{display:grid;gap:16px}
 @media(min-width:768px){.section-grid{grid-template-columns:repeat(2,1fr)}}
 .section-card{border:1px solid var(--border);border-radius:16px;padding:16px;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.04)}
 .section-card h3{margin:0 0 8px;font-size:18px}
 .section-card p{margin:0 0 8px;color:var(--muted)}
 .section-card a.more{text-decoration:underline}
-
-/* 扉：下層リンク */
-.child-list{display:grid;gap:12px;margin:8px 0 4px}
-.child-item{border:1px solid var(--border);border-radius:12px;padding:12px;background:#fff}
-.child-item a{font-weight:600;text-decoration:underline}
-
-/* テーブル／リスト */
-.table{width:100%;border-collapse:collapse;border:1px solid var(--border);border-radius:12px;overflow:hidden}
-.table th,.table td{border-bottom:1px solid var(--border);padding:10px;text-align:left;vertical-align:top}
-.table thead th{background:var(--bg-soft)}
-main ul{margin:0 0 12px;padding-left:20px;list-style:disc}
-main ol{margin:0 0 12px;padding-left:20px;list-style:decimal}
-
-/* 印刷時 */
-@media print{
-  .site-header,.site-footer{display:none !important}
-  a[href]::after{content:" (" attr(href) ")";font-size:10px}
-}
